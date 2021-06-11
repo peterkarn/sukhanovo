@@ -1,0 +1,5 @@
+{
+  "jsdom": {
+    "file": "./index.html"
+  }
+}
