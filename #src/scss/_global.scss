@@ -10,9 +10,12 @@ html {
 
 body {
   margin: 0;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: sans-serif;
   line-height: 1.3;
   letter-spacing: 0.02em;
+
+
+  background-color: $bgr;
 }
 
 h1,
@@ -44,13 +47,22 @@ a {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 section {
   padding: 100px 0;
 }
 
-.container {}
+.container {
+  max-width: 1170px;
+  padding: 0 30px;
+  margin: 0 auto;
+
+  @media screen and (max-width: $xsmall) {
+    padding: 0 15px;
+  }
+}
 
 ._ibg {
   position: relative;

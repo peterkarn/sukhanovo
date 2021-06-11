@@ -1,2 +1,1 @@
-@@include('libs/smoothScroll.js', {})
-@@include('libs/swiper.min.js', {})
+@@include('files/dynamic_adapt.js', {})

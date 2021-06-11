@@ -1,5 +1,5 @@
-$maxWidth: 1600;
-$maxWidthContainer: 1580;
+$maxWidth: 1400;
+$maxWidthContainer: 1170;
 
 @mixin adaptiv-value($property, $startSize, $minSize, $type) {
   $addSize: $startSize - $minSize;
@@ -33,6 +33,7 @@ $large: 1200px;
 $medium: 992px;
 $small: 768px;
 $xsmall: 576px;
+$xxsmall: 359px;
 
 //colors
 
