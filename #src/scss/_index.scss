@@ -1,0 +1,109 @@
+// offer - 1 screen
+
+.offer {
+  position: relative;
+  color: $white;
+  height: 100vh;
+  min-height: 700px;
+  padding: 110px 0 35px 0;
+
+  @media screen and (max-width: $medium) {
+    padding-top: 80px;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(30, 31, 34, .68) 5.31%, rgba(30, 31, 34, .3) 17.42%, rgba(30, 31, 34, .20) 32.27%, rgba(30, 31, 34, .20) 36.77%, rgba(30, 31, 34, .30) 47.19%, rgba(30, 31, 34, .50) 64.37%, rgba(30, 31, 34, 0) 70.62%);
+  }
+
+  &__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media screen and (max-width: $xsmall) {
+      bottom: 40%;
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 20%;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(30, 31, 34, 1) 50%);
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 0;
+    display: grid;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__inner {
+    max-width: 610px;
+
+    @media screen and (max-width: $xsmall) {
+      align-self: end;
+      padding-bottom: 30%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__subtitle {
+    line-height: 160%;
+
+    @include adaptiv-value('font-size', 16, 13, 1);
+  }
+
+  &__bottom {
+    text-align: center;
+    align-self: end;
+
+    @media screen and (max-width: $xsmall) {
+      display: none;
+    }
+  }
+
+  &__footnote {
+    position: relative;
+    max-width: 450px;
+    margin: 0 auto;
+
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: -25%;
+      bottom: 0;
+      top: -50%;
+      width: 150%;
+      height: 150%;
+      border-radius: 50%;
+      background-color: #00000059;
+      filter: blur(15px);
+    }
+  }
+}

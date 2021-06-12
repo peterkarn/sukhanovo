@@ -13,7 +13,49 @@
   <div class="site-container">
     @@include('_header.html')
     <main class="main">
-
+      <section class="offer">
+        <!-- offer bg image -->
+        <div class="offer__bg">
+          <picture>
+            <source srcset="img/offer/offer-bg-mob.webp, img/offer/offer-bg-mob@2x.webp 2x" media="(max-width: 576px)"
+              type="image/webp">
+            <source srcset="img/offer/offer-bg-mob.jpg, img/offer/offer-bg-mob@2x.jpg 2x" media="(max-width: 576px)"
+              type="image/jpeg">
+            <source srcset="img/offer/offer-bg.webp, img/offer/offer-bg@2x.webp 2x" media="(max-width: 1400px)"
+              type="image/webp">
+            <source srcset="img/offer/offer-bg.jpg, img/offer/offer-bg@2x.jpg" media="(max-width: 1400px)"
+              type="image/jpeg">
+            <source srcset="img/offer/offer-bg@2x.webp" media="(min-width: 1401px)" type="image/webp">
+            <source srcset="img/offer/offer-bg@2x.jpg" media="(min-width: 1401px)" type="image/jpeg">
+            <img src="offer-bg-mob.webp" alt="Суханово" style="width:100%;">
+          </picture>
+        </div>
+        <!-- *** -->
+        <div class="container offer__container">
+          <div class="offer__inner">
+            <h1 class="main-title offer__title">
+              Коттеджный поселок «Усадьба Суханово» на юге Москвы
+            </h1>
+            <p class="offer__subtitle">
+              Место, где объединены удобства городской инфраструктуры и чарующая красота природы
+            </p>
+            <a class="btn btn_primary" href="#">
+              Выбрать дом
+            </a>
+          </div>
+          <div class="offer__bottom">
+            <svg class="offer__arrow" width="16" height="34" viewBox="0 0 16 34" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M7.29289 33.7071C7.68342 34.0976 8.31658 34.0976 8.70711 33.7071L15.0711 27.3431C15.4616 26.9526 15.4616 26.3195 15.0711 25.9289C14.6805 25.5384 14.0474 25.5384 13.6569 25.9289L8 31.5858L2.34315 25.9289C1.95262 25.5384 1.31946 25.5384 0.928933 25.9289C0.538409 26.3195 0.538409 26.9526 0.928933 27.3431L7.29289 33.7071ZM7 4.37114e-08L7 33L9 33L9 -4.37114e-08L7 4.37114e-08Z"
+                fill="#FDBA61" />
+            </svg>
+            <p class="offer__footnote">
+              Листайте ниже, чтобы перейти к виртуальной экскурсии и увидеть все достоинства своими глазами
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 
