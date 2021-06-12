@@ -112,8 +112,6 @@
 
 .features {
 
-  &__inner {}
-
   &__item {
     &:not(:last-child) {
       @include adaptiv-value('margin-bottom', 100, 80, 1);
@@ -132,12 +130,17 @@
   min-width: 0;
   overflow: hidden;
 
+  @media screen and (max-width: $large) {
+    align-items: center;
+  }
+
   &__descr {
     flex: 0 1 47%;
     padding: 30px;
   }
 
   &__title {
+    line-height: 1.1;
     @include adaptiv-value('margin-bottom', 40, 28, 1);
   }
 
@@ -156,6 +159,7 @@
 
   &__media {
     width: 53%;
+    min-width: 520px;
 
     img {
       display: block;
@@ -185,8 +189,11 @@
 }
 
 .controls {
+  display: flex;
 
   &__audio {
+    display: inline-flex;
+
     &:before {
       content: "Слушать";
       position: relative;
@@ -206,18 +213,24 @@
     }
   }
 
+  &__btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 150px;
+    width: 120px;
+  }
+
   &__prev,
   &__next {
+    position: static;
     margin: 0;
     width: 48px;
     height: 15px;
-    right: 150px;
-    top: 50%;
     background-image: url("../img/common/arrow.svg");
     background-repeat: no-repeat;
     background-size: initial;
     background-position: center;
-    transform: translateY(-50%);
 
     &:after {
       display: none;
@@ -226,9 +239,7 @@
 
   &__prev {
     left: auto;
-    right: 220px;
-    transform: rotate(180deg) translateY(50%);
+    transform: rotate(180deg);
   }
 
-  &__next {}
 }

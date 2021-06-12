@@ -1717,6 +1717,7 @@ button.swiper-pagination-bullet {
 }
 
 .feature__title {
+  line-height: 1.1;
   margin-bottom: 40px;
 }
 
@@ -1735,6 +1736,7 @@ button.swiper-pagination-bullet {
 
 .feature__media {
   width: 53%;
+  min-width: 520px;
 }
 
 .feature__media img {
@@ -1761,6 +1763,18 @@ button.swiper-pagination-bullet {
           transform: translate(-50%, -50%);
 }
 
+.controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.controls__audio {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
 .controls__audio:before {
   content: "Слушать";
   position: relative;
@@ -1783,20 +1797,30 @@ button.swiper-pagination-bullet {
           transform: scaleY(0);
 }
 
+.controls__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 150px;
+  width: 120px;
+}
+
 .controls__prev,
 .controls__next {
+  position: static;
   margin: 0;
   width: 48px;
   height: 15px;
-  right: 150px;
-  top: 50%;
   background-image: url("../img/common/arrow.svg");
   background-repeat: no-repeat;
   background-size: initial;
   background-position: center;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
 }
 
 .controls__prev:after,
@@ -1806,10 +1830,9 @@ button.swiper-pagination-bullet {
 
 .controls__prev {
   left: auto;
-  right: 220px;
-  -webkit-transform: rotate(180deg) translateY(50%);
-      -ms-transform: rotate(180deg) translateY(50%);
-          transform: rotate(180deg) translateY(50%);
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 @media screen and (min-width: 993px) {
@@ -1834,6 +1857,14 @@ button.swiper-pagination-bullet {
 
   .menu__list > li {
     padding: 10px 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .feature {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 

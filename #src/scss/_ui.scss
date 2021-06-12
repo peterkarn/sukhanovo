@@ -150,16 +150,23 @@
     position: relative;
     padding: 30px 30px 30px 0;
 
+    // @media screen and (max-width: $medium) {
+    //   padding: 13px 13px 13px 0;
+    // }
+
     &:after {
       right: 0;
       border-left: none;
-      ;
     }
   }
 
   &-left {
     position: relative;
     padding: 30px 0 30px 30px;
+
+    // @media screen and (max-width: $medium) {
+    //   padding: 13px 0 13px 13px;
+    // }
 
     &:after {
       left: 0;
