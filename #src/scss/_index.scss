@@ -107,3 +107,128 @@
     }
   }
 }
+
+//features screen
+
+.features {
+
+  &__inner {}
+
+  &__item {
+    &:not(:last-child) {
+      @include adaptiv-value('margin-bottom', 100, 80, 1);
+    }
+
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  min-width: 0;
+  overflow: hidden;
+
+  &__descr {
+    flex: 0 1 47%;
+    padding: 30px;
+  }
+
+  &__title {
+    @include adaptiv-value('margin-bottom', 40, 28, 1);
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    @include adaptiv-value('font-size', 15, 13, 1);
+
+    p:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__bottom {
+    position: relative;
+  }
+
+  &__media {
+    width: 53%;
+
+    img {
+      display: block;
+    }
+  }
+
+  &__media-item {
+    padding-bottom: 57%;
+  }
+
+  &__media-item_with-btn {
+    display: block;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+
+    .video-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+
+  &__slider {}
+}
+
+.controls {
+
+  &__audio {
+    &:before {
+      content: "Слушать";
+      position: relative;
+      right: calc(-100% - 10px);
+      color: $white;
+      font-weight: 700;
+      margin-left: 10px;
+      font-size: 14px;
+      text-decoration: underline;
+      transition: transform 0.2s;
+    }
+
+    &.playing {
+      &:before {
+        transform: scaleY(0);
+      }
+    }
+  }
+
+  &__prev,
+  &__next {
+    margin: 0;
+    width: 48px;
+    height: 15px;
+    right: 150px;
+    top: 50%;
+    background-image: url("../img/common/arrow.svg");
+    background-repeat: no-repeat;
+    background-size: initial;
+    background-position: center;
+    transform: translateY(-50%);
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &__prev {
+    left: auto;
+    right: 220px;
+    transform: rotate(180deg) translateY(50%);
+  }
+
+  &__next {}
+}
