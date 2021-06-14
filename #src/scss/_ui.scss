@@ -73,12 +73,16 @@
   align-items: center;
   width: 60px;
   height: 60px;
-  font-size: 24px;
   border-radius: 50%;
   color: $dark;
   background-color: $gold;
   cursor: pointer;
   transition: bottom 0.5s;
+
+  @media screen and (max-width: $small) {
+    width: 50px;
+    height: 50px;
+  }
 
   &:after {
     content: "";
@@ -126,6 +130,7 @@
 .page-title {
   color: $gold;
   @include adaptiv-value('font-size', 36, 20, 1);
+  @include adaptiv-value('margin-bottom', 40, 30, 1);
 }
 
 //
@@ -150,9 +155,9 @@
     position: relative;
     padding: 30px 30px 30px 0;
 
-    // @media screen and (max-width: $medium) {
-    //   padding: 13px 13px 13px 0;
-    // }
+    @media screen and (max-width: $medium) {
+      padding: 13px 13px 13px 0;
+    }
 
     &:after {
       right: 0;
@@ -164,9 +169,9 @@
     position: relative;
     padding: 30px 0 30px 30px;
 
-    // @media screen and (max-width: $medium) {
-    //   padding: 13px 0 13px 13px;
-    // }
+    @media screen and (max-width: $medium) {
+      padding: 13px 0 13px 13px;
+    }
 
     &:after {
       left: 0;

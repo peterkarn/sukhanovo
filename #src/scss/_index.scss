@@ -111,15 +111,36 @@
 //features screen
 
 .features {
+  @media screen and (max-width: $xsmall) {
+    padding: 0;
+  }
 
   &__item {
+    @media screen and (max-width: $medium) {
+      display: grid;
+    }
+
     &:not(:last-child) {
       @include adaptiv-value('margin-bottom', 100, 80, 1);
+
+      @media screen and (max-width: $small) {
+        margin-bottom: 0;
+      }
     }
 
     *:last-child {
       margin-bottom: 0;
     }
+
+    //mobiles 
+
+    @media screen and (max-width: $small) {
+      margin: 0 -15px;
+      padding: 70px 15px;
+      border: 1px solid red
+    }
+
+    &.white-bg-on-mob {}
   }
 
 }
@@ -137,16 +158,27 @@
   &__descr {
     flex: 0 1 47%;
     padding: 30px;
+
+    @media screen and (max-width: $medium) {
+      order: -1;
+    }
+
+    @media screen and (max-width: $small) {
+      padding: 13px;
+    }
+
+    @media screen and (max-width: $xsmall) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   &__title {
     line-height: 1.1;
-    @include adaptiv-value('margin-bottom', 40, 28, 1);
   }
 
   &__text {
     margin-bottom: 30px;
-    @include adaptiv-value('font-size', 15, 13, 1);
 
     p:not(:last-child) {
       margin-bottom: 20px;
@@ -160,6 +192,23 @@
   &__media {
     width: 53%;
     min-width: 520px;
+
+    @media screen and (max-width: $medium) {
+      margin-top: 30px;
+      padding: 13px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    @media screen and (max-width: $small) {
+      &:nth-of-type(2n+1) {
+        padding-right: 0;
+      }
+
+      &:nth-of-type(2n) {
+        padding-left: 0;
+      }
+    }
 
     img {
       display: block;
@@ -185,7 +234,11 @@
   }
 
 
-  &__slider {}
+  &__btn-shift {
+    @media screen and (max-width: $xsmall) {
+      margin: 30px 10% 0 10%;
+    }
+  }
 }
 
 .controls {
@@ -219,6 +272,14 @@
     justify-content: space-between;
     margin-left: 150px;
     width: 120px;
+
+    @media screen and (max-width: $medium) {
+      margin-left: auto;
+    }
+
+    @media screen and (max-width: $small) {
+      width: 110px;
+    }
   }
 
   &__prev,
@@ -242,4 +303,69 @@
     transform: rotate(180deg);
   }
 
+}
+
+//dream screen
+
+.dream {
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    @media screen and (max-width: $small) {
+      display: grid;
+    }
+  }
+
+  &__icons {
+    display: grid;
+    flex: 0 0 330px;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: baseline;
+    margin-right: 30px;
+
+    @media screen and (max-width: $medium) {
+      flex: 0 0 300px;
+    }
+
+    @media screen and (max-width: $small) {
+      order: 2;
+      margin-right: 0;
+    }
+  }
+
+  &__descr {
+    flex: 0 0 540px;
+
+    @media screen and (max-width: $medium) {
+      flex-shrink: 1;
+    }
+
+    @media screen and (max-width: $small) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    p:not(:last-child) {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.icons {
+  &__item {}
+}
+
+.icon-dream {
+  text-align: center;
+
+  &__img {}
+
+  &__title {
+    text-align: center;
+    font-weight: 400;
+  }
 }

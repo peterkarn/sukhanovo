@@ -420,6 +420,7 @@ body {
   letter-spacing: 0.02em;
   color: #FAFAFA;
   background-color: #1E1F22;
+  font-size: 15px;
 }
 
 h1,
@@ -1332,7 +1333,6 @@ button.swiper-pagination-bullet {
           align-items: center;
   width: 60px;
   height: 60px;
-  font-size: 24px;
   border-radius: 50%;
   color: #333;
   background-color: #FDBA61;
@@ -1396,6 +1396,7 @@ button.swiper-pagination-bullet {
 .page-title {
   color: #FDBA61;
   font-size: 36px;
+  margin-bottom: 40px;
 }
 
 .deco-right:after,
@@ -1718,12 +1719,10 @@ button.swiper-pagination-bullet {
 
 .feature__title {
   line-height: 1.1;
-  margin-bottom: 40px;
 }
 
 .feature__text {
   margin-bottom: 30px;
-  font-size: 15px;
 }
 
 .feature__text p:not(:last-child) {
@@ -1835,6 +1834,48 @@ button.swiper-pagination-bullet {
           transform: rotate(180deg);
 }
 
+.dream__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.dream__icons {
+  display: grid;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 330px;
+          flex: 0 0 330px;
+  grid-template-columns: repeat(2, 1fr);
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  margin-right: 30px;
+}
+
+.dream__descr {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 540px;
+          flex: 0 0 540px;
+}
+
+.dream__text p:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.icon-dream {
+  text-align: center;
+}
+
+.icon-dream__title {
+  text-align: center;
+  font-weight: 400;
+}
+
 @media screen and (min-width: 993px) {
   .header__menu {
     border-bottom: 2px solid rgba(250, 250, 250, 0.1);
@@ -1869,6 +1910,10 @@ button.swiper-pagination-bullet {
 }
 
 @media (max-width: 1170px) {
+  body {
+    font-size: calc(14px + 1 * ((100vw - 320px) / 850));
+  }
+
   .page-section {
     padding-top: calc(70px + 41 * ((100vw - 320px) / 850));
   }
@@ -1885,6 +1930,10 @@ button.swiper-pagination-bullet {
     font-size: calc(20px + 16 * ((100vw - 320px) / 850));
   }
 
+  .page-title {
+    margin-bottom: calc(30px + 10 * ((100vw - 320px) / 850));
+  }
+
   .offer__subtitle {
     font-size: calc(13px + 3 * ((100vw - 320px) / 850));
   }
@@ -1892,17 +1941,17 @@ button.swiper-pagination-bullet {
   .features__item:not(:last-child) {
     margin-bottom: calc(80px + 20 * ((100vw - 320px) / 850));
   }
-
-  .feature__title {
-    margin-bottom: calc(28px + 12 * ((100vw - 320px) / 850));
-  }
-
-  .feature__text {
-    font-size: calc(13px + 2 * ((100vw - 320px) / 850));
-  }
 }
 
 @media screen and (max-width: 992px) {
+  .deco-right {
+    padding: 13px 13px 13px 0;
+  }
+
+  .deco-left {
+    padding: 13px 0 13px 13px;
+  }
+
   .header {
     padding: 15px 0;
   }
@@ -1983,18 +2032,97 @@ button.swiper-pagination-bullet {
   .offer {
     padding-top: 80px;
   }
+
+  .features__item {
+    display: grid;
+  }
+
+  .feature__descr {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+
+  .feature__media {
+    margin-top: 30px;
+    padding: 13px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .controls__btns {
+    margin-left: auto;
+  }
+
+  .dream__icons {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 300px;
+            flex: 0 0 300px;
+  }
+
+  .dream__descr {
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  .white-bg-on-mob {
-    background-color: #FAFAFA;
-    color: #333;
+  .audio-btn,
+  .video-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .features__item:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .features__item {
+    margin: 0 -15px;
+    padding: 70px 15px;
+    border: 1px solid red;
+  }
+
+  .feature__descr {
+    padding: 13px;
+  }
+
+  .feature__media:nth-of-type(2n+1) {
+    padding-right: 0;
+  }
+
+  .feature__media:nth-of-type(2n) {
+    padding-left: 0;
+  }
+
+  .controls__btns {
+    width: 110px;
+  }
+
+  .dream__container {
+    display: grid;
+  }
+
+  .dream__icons {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-right: 0;
+  }
+
+  .dream__descr {
+    margin-bottom: 30px;
   }
 }
 
 @media screen and (max-width: 576px) {
   .container {
     padding: 0 15px;
+  }
+
+  .white-on-mob {
+    background-color: #FAFAFA;
+    color: #333;
   }
 
   .menu__icon {
@@ -2025,6 +2153,19 @@ button.swiper-pagination-bullet {
 
   .offer__bottom {
     display: none;
+  }
+
+  .features {
+    padding: 0;
+  }
+
+  .feature__descr {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .feature__btn-shift {
+    margin: 30px 10% 0 10%;
   }
 }
 

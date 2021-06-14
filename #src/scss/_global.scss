@@ -16,6 +16,7 @@ body {
   letter-spacing: 0.02em;
   color: $white;
   background-color: $bgr;
+  @include adaptiv-value('font-size', 15, 14, 1);
 }
 
 h1,
@@ -114,8 +115,8 @@ button {
   }
 }
 
-.white-bg-on-mob {
-  @media screen and (max-width: $small) {
+.white-on-mob {
+  @media screen and (max-width: $xsmall) {
     background-color: $white;
     color: $dark;
   }
