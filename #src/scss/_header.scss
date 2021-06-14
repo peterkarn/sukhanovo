@@ -17,6 +17,17 @@
     align-items: center;
   }
 
+
+  &__logo {
+    display: none;
+
+    @media screen and (max-width: $medium) {
+      flex: 0 0 209px;
+      display: block;
+    }
+  }
+
+
   &__menu {
     width: 100%;
 
@@ -51,10 +62,6 @@
       width: 40px;
       height: 20px;
       cursor: pointer;
-    }
-
-    @media screen and (max-width: $xsmall) {
-      margin: 0;
     }
 
     & span,
@@ -225,6 +232,29 @@
     }
   }
 
+
+  &__logo-mobile {
+    display: none;
+
+    @media screen and (max-width: $medium) {
+      display: block;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // delete
   &__logo-placeholder {
     display: none;
 

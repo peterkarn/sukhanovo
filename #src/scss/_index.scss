@@ -61,10 +61,12 @@
 
   &__inner {
     max-width: 610px;
+    padding-top: 13%;
 
     @media screen and (max-width: $xsmall) {
       align-self: end;
       padding-bottom: 30%;
+      padding-top: 0;
     }
   }
 
@@ -74,8 +76,8 @@
 
   &__subtitle {
     line-height: 160%;
-
     @include adaptiv-value('font-size', 16, 13, 1);
+    @include adaptiv-value('margin-bottom', 40, 20, 1);
   }
 
   &__bottom {
@@ -217,6 +219,16 @@
 
   &__media-item {
     padding-bottom: 57%;
+
+    .yBox {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+    }
   }
 
   &__media-item_with-btn {
@@ -230,6 +242,17 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+    }
+  }
+
+  &__media-video {
+    display: block;
+    z-index: 1;
+
+    &:hover {
+      .video-btn {
+        opacity: 1;
+      }
     }
   }
 
@@ -308,6 +331,7 @@
 //dream screen
 
 .dream {
+  background-color: white;
 
   &__container {
     display: flex;
@@ -325,6 +349,7 @@
     grid-template-columns: repeat(2, 1fr);
     align-items: baseline;
     margin-right: 30px;
+    gap: 30px;
 
     @media screen and (max-width: $medium) {
       flex: 0 0 300px;

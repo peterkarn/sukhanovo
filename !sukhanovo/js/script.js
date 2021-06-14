@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const featureSlider = new Swiper('.feature__slider', {
     loop: true,
+    touchRatio: 0.3,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -26,4 +27,12 @@ document.addEventListener('DOMContentLoaded', function () {
   audioBtn.addEventListener('click', (e) => {
     e.target.classList.toggle('playing');
   })
+
+  //yBox
+
+  if (document.querySelector('.yBox')) {
+    var myYbox = new yBox();
+    myYbox.init();
+  };
 });
+
