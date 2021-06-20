@@ -1787,6 +1787,11 @@ button.swiper-pagination-bullet {
   margin-bottom: 40px;
 }
 
+.title-tertiary {
+  color: #FDBA61;
+  font-size: 24px;
+}
+
 .deco-right:after,
 .deco-left:after {
   content: "";
@@ -1883,6 +1888,7 @@ button.swiper-pagination-bullet {
 }
 
 .inner-item__title {
+  font-weight: 700;
   font-size: 15px;
   color: #FDBA61;
   margin-bottom: 10px;
@@ -1971,7 +1977,6 @@ button.swiper-pagination-bullet {
 
 .tabs__content {
   display: none;
-  background-color: #fff;
 }
 
 .tabs__content_active {
@@ -1979,8 +1984,7 @@ button.swiper-pagination-bullet {
 }
 
 .content {
-  padding: 40px 60px;
-  width: 796px;
+  text-align: left;
 }
 
 .content__title {
@@ -2702,6 +2706,34 @@ button.swiper-pagination-bullet {
   fill: #FDBA61;
 }
 
+.credit__media img {
+  width: 100%;
+}
+
+.credit__content {
+  display: grid;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+}
+
+.credit__tabtitle {
+  margin-bottom: 30px;
+}
+
+.credit__tabtext {
+  margin-bottom: 30px;
+}
+
+.credit__form {
+  width: 100%;
+  border: 2px dotted green;
+  height: 225px;
+  max-width: 255px;
+  display: grid;
+  place-items: center;
+}
+
 @media screen and (min-width: 993px) {
   .header__menu {
     border-bottom: 2px solid rgba(250, 250, 250, 0.1);
@@ -2760,6 +2792,10 @@ button.swiper-pagination-bullet {
     margin-bottom: calc(30px + 10 * ((100vw - 320px) / 850));
   }
 
+  .title-tertiary {
+    font-size: calc(16px + 8 * ((100vw - 320px) / 850));
+  }
+
   .tabs__list {
     font-size: calc(22px + 14 * ((100vw - 320px) / 850));
   }
@@ -2790,6 +2826,10 @@ button.swiper-pagination-bullet {
 
   .map__actions > p {
     margin-bottom: calc(15px + 10 * ((100vw - 320px) / 850));
+  }
+
+  .credit__tabtitle {
+    margin-bottom: calc(20px + 10 * ((100vw - 320px) / 850));
   }
 }
 
@@ -2948,6 +2988,10 @@ button.swiper-pagination-bullet {
     margin-left: 0;
     width: 100%;
   }
+
+  .credit__media {
+    margin-top: 0;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -2999,6 +3043,10 @@ button.swiper-pagination-bullet {
 
   .dream__descr {
     margin-bottom: 30px;
+  }
+
+  .credit__form {
+    max-width: 100%;
   }
 }
 
@@ -3192,6 +3240,19 @@ button.swiper-pagination-bullet {
   .yBoxFrame.yBoxImgWrap img.yBoxImg,
   .yBoxIframe {
     max-height: calc(100vh - 90px);
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .credit__content {
+    grid-template-columns: auto 230px;
+    grid-template-rows: repeat(2, -webkit-max-content);
+    grid-template-rows: repeat(2, max-content);
+  }
+
+  .credit__form {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
   }
 }
 
