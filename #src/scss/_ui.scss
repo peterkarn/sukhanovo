@@ -143,7 +143,7 @@
 
 //
 
-//decore
+//decor
 
 .deco {
 
@@ -189,4 +189,248 @@
 
 }
 
-//
+// accordion
+
+.accordion {
+  &__control {
+    display: flex;
+    align-items: center;
+    min-height: 62px;
+    width: 100%;
+    padding: 0 17px;
+    border: 1px solid $grey;
+    font-weight: 400;
+    color: $gold;
+    text-align: left;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+
+  &__content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    will-change: max-height;
+    transition: all 0.3s ease-out;
+    box-sizing: content-box;
+    border: 1px solid $grey;
+    border-top: none;
+  }
+
+  &__pic {
+    margin-right: 10px;
+  }
+
+  &__title {
+    font-size: 15px;
+  }
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    background-image: url("../img/common/carette.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease-out;
+  }
+
+  &__inner-list {
+    padding: 13px;
+  }
+
+  &__inner-item {
+    padding-bottom: 11px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid $grey;
+  }
+
+}
+
+.inner-item {
+
+  &__title {
+    font-size: 15px;
+    color: $gold;
+    margin-bottom: 10px;
+  }
+
+  &__distance {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: $grey;
+  }
+
+  &__descr {
+    font-size: 14px;
+  }
+}
+
+.open .accordion__icon {
+  transform: scaleY(-1);
+}
+
+.open .accordion__content {
+  opacity: 1;
+}
+
+//tabs
+
+.tabs {
+  position: relative;
+  text-align: center;
+}
+
+.tabs__list {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  list-style-type: none;
+  font-weight: 700;
+  @include adaptiv-value('font-size', 36, 22, 1);
+  @include adaptiv-value('margin-bottom', 40, 30, 1);
+  @include adaptiv-value('padding-bottom', 25, 10, 1);
+
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+  }
+
+  &:after {
+    width: 80%;
+    height: 2px;
+    background-color: $grey;
+  }
+
+}
+
+.tabs__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.tabs__item {}
+
+.tabs__btn {
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  color: $grey;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+
+}
+
+.tabs__btn_active {
+  color: $gold;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.tabs__content {
+  display: none;
+  background-color: #fff;
+}
+
+.tabs__content_active {
+  display: block;
+}
+
+.content {
+  padding: 40px 60px;
+  width: 796px;
+}
+
+.content__title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: var(--color-dark);
+}
+
+.content__descr {
+  margin: 0;
+  margin-bottom: 59px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-dark);
+}
+
+.content__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content__link {
+  padding: 14px;
+  width: 200px;
+  height: 120px;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #ebecf3;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+
+.content__text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #a2a6c0;
+}
+
+.tabs__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border: none;
+  background-color: var(--color-accent);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.tabs__arrow svg {
+  pointer-events: none;
+  fill: #fff;
+  transition: fill 0.3s ease-in-out;
+}
+
+.tabs__arrow:hover {
+  background-color: #fff;
+}
+
+.tabs__arrow:hover svg {
+  fill: var(--color-accent);
+}
+
+.tabs__arrow--next {
+  right: -204px;
+}
+
+.tabs__arrow--prev {
+  left: -204px;
+}
