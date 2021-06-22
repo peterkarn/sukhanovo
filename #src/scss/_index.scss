@@ -382,9 +382,11 @@
   }
 }
 
-// .icons {
-//   &__item {}
-// }
+//gifts screen
+
+.gifts {
+  padding-bottom: 0;
+}
 
 .icon-dream {
   text-align: center;
@@ -496,6 +498,7 @@
 
 
 .map {
+  padding-bottom: 0;
 
   &__container {
     position: relative;
@@ -592,6 +595,7 @@
 //credit
 
 .credit {
+  padding-bottom: 0;
 
   // &__tabs {}
 
