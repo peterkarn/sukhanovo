@@ -1,0 +1,71 @@
+.contacts {
+
+  &__title {}
+
+  &__actions {}
+
+  &__howtoget {}
+
+  &__map {}
+}
+
+.actions-list {
+  display: grid;
+
+  &__item {
+    a {
+      transition: color 0.3s;
+
+      &:hover {
+        color: $gold;
+      }
+    }
+
+    p {
+      margin-right: 10px;
+    }
+
+
+    &_socials {
+      display: flex;
+    }
+  }
+}
+
+.socials-list {
+  display: flex;
+  margin: -5px;
+
+  li {
+    margin: 5px;
+  }
+}
+
+.socials {
+
+  &__item {
+    path {
+      fill: $gold;
+      transition: fill 0.3s;
+    }
+
+    &:hover {
+      path {
+        fill: $white;
+      }
+    }
+  }
+}
+
+.howtoget {
+
+  &__title {
+    margin-bottom: 1em;
+
+    @include adaptiv-value('font-size', 16, 15, 1);
+  }
+
+  &__tabs {
+    text-align: left;
+  }
+}

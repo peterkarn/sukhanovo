@@ -316,13 +316,19 @@
     background-color: $grey;
   }
 
+  &_small {
+    padding-bottom: 1em;
+    @include adaptiv-value('margin-bottom', 22, 20, 1);
+    @include adaptiv-value('font-size', 16, 15, 1);
+  }
+
 }
 
 .tabs__item:not(:last-child) {
   margin-right: 10px;
 }
 
-.tabs__item {}
+// .tabs__item {}
 
 .tabs__btn {
   border: none;

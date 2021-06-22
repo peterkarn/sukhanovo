@@ -574,6 +574,10 @@ button:focus {
           transition-delay: 0.2s;
 }
 
+.bold {
+  font-weight: 700;
+}
+
 /*! yBox - v1.0 - 2020-08-07
 * By Yuval Ashkenazi and Yoav Leshem
 * https://github.com/Leshemiko/Ybox */
@@ -1953,6 +1957,12 @@ button.swiper-pagination-bullet {
   background-color: #939393;
 }
 
+.tabs__list_small {
+  padding-bottom: 1em;
+  margin-bottom: 22px;
+  font-size: 16px;
+}
+
 .tabs__item:not(:last-child) {
   margin-right: 10px;
 }
@@ -2734,6 +2744,152 @@ button.swiper-pagination-bullet {
   place-items: center;
 }
 
+.actions-list {
+  display: grid;
+}
+
+.actions-list__item a {
+  -webkit-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.actions-list__item a:hover {
+  color: #FDBA61;
+}
+
+.actions-list__item p {
+  margin-right: 10px;
+}
+
+.actions-list__item_socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.socials-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: -5px;
+}
+
+.socials-list li {
+  margin: 5px;
+}
+
+.socials__item path {
+  fill: #FDBA61;
+  -webkit-transition: fill 0.3s;
+  -o-transition: fill 0.3s;
+  transition: fill 0.3s;
+}
+
+.socials__item:hover path {
+  fill: #FAFAFA;
+}
+
+.howtoget__title {
+  margin-bottom: 1em;
+  font-size: 16px;
+}
+
+.howtoget__tabs {
+  text-align: left;
+}
+
+.index-contacts {
+  display: grid;
+  grid-template-columns: 450px 1fr;
+  grid-template-rows: minmax(70px, -webkit-max-content) minmax(70px, -webkit-max-content) auto;
+  grid-template-rows: minmax(70px, max-content) minmax(70px, max-content) auto;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+}
+
+.index-contacts__howtoget {
+  max-width: 450px;
+}
+
+.index-contacts__map {
+  align-self: center;
+  grid-row: 1 / 4;
+  grid-column: 2 / 3;
+}
+
+.index-contacts__actions-list {
+  grid-template-columns: repeat(2, auto);
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-column-gap: 44px;
+     -moz-column-gap: 44px;
+          column-gap: 44px;
+  row-gap: 18px;
+}
+
+.footer {
+  padding: 40px 0 45px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #333;
+  font-size: 15px;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 20px;
+}
+
+.footer__logo-mob {
+  display: none;
+}
+
+.footer__conf {
+  font-size: 12px;
+  max-width: 320px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 2;
+}
+
+.footer__conf a {
+  -webkit-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.footer__conf a:hover {
+  color: #FDBA61;
+}
+
+.col__title {
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.col__list li {
+  margin-bottom: 20px;
+}
+
+.col__list li:last-child {
+  margin-bottom: 0;
+}
+
+.col__title,
+.col a {
+  -webkit-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.col__title:hover,
+.col a:hover {
+  color: #FDBA61;
+}
+
 @media screen and (min-width: 993px) {
   .header__menu {
     border-bottom: 2px solid rgba(250, 250, 250, 0.1);
@@ -2808,6 +2964,14 @@ button.swiper-pagination-bullet {
     padding-bottom: calc(10px + 15 * ((100vw - 320px) / 850));
   }
 
+  .tabs__list_small {
+    margin-bottom: calc(20px + 2 * ((100vw - 320px) / 850));
+  }
+
+  .tabs__list_small {
+    font-size: calc(15px + 1 * ((100vw - 320px) / 850));
+  }
+
   .offer__subtitle {
     font-size: calc(13px + 3 * ((100vw - 320px) / 850));
   }
@@ -2830,6 +2994,14 @@ button.swiper-pagination-bullet {
 
   .credit__tabtitle {
     margin-bottom: calc(20px + 10 * ((100vw - 320px) / 850));
+  }
+
+  .howtoget__title {
+    font-size: calc(15px + 1 * ((100vw - 320px) / 850));
+  }
+
+  .footer {
+    font-size: calc(14px + 1 * ((100vw - 320px) / 850));
   }
 }
 
@@ -2992,6 +3164,29 @@ button.swiper-pagination-bullet {
   .credit__media {
     margin-top: 0;
   }
+
+  .index-contacts {
+    grid-template-columns: -webkit-max-content 1fr;
+    grid-template-columns: max-content 1fr;
+  }
+
+  .index-contacts__title {
+    grid-column: span 2;
+  }
+
+  .index-contacts__map {
+    grid-row: 3 / 4;
+    grid-column: 1 / 3;
+    margin-top: 5%;
+  }
+
+  .index-contacts__actions-list {
+    grid-template-columns: auto;
+  }
+
+  .footer__logo-desktop {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -3047,6 +3242,50 @@ button.swiper-pagination-bullet {
 
   .credit__form {
     max-width: 100%;
+  }
+
+  .index-contacts {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+
+  .index-contacts__title {
+    grid-column: auto;
+  }
+
+  .index-contacts__map {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
+
+  .index-contacts__actions-list {
+    margin-bottom: 5%;
+  }
+
+  .footer {
+    padding: 70px 0;
+  }
+
+  .footer__container {
+    display: block;
+    text-align: center;
+  }
+
+  .footer__logo-mob {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .footer .actions-list__item_socials {
+    margin: 0 auto;
+  }
+
+  .col__list li:last-child {
+    padding-bottom: 20px;
+  }
+
+  .col__list.bold {
+    font-weight: 400;
   }
 }
 

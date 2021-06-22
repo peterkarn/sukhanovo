@@ -382,14 +382,14 @@
   }
 }
 
-.icons {
-  &__item {}
-}
+// .icons {
+//   &__item {}
+// }
 
 .icon-dream {
   text-align: center;
 
-  &__img {}
+  // &__img {}
 
   &__title {
     text-align: center;
@@ -451,9 +451,9 @@
     }
   }
 
-  &__title {}
+  // &__title {}
 
-  &__subtitle {}
+  // &__subtitle {}
 
   &__bottoom {
     position: relative;
@@ -593,7 +593,7 @@
 
 .credit {
 
-  &__tabs {}
+  // &__tabs {}
 
   &__media {
 
@@ -643,6 +643,74 @@
 
     @media screen and (max-width: $small) {
       max-width: 100%;
+    }
+  }
+}
+
+//contacts
+
+@import "contacts-block";
+
+.index-contacts {
+  display: grid;
+  grid-template-columns: 450px 1fr;
+  grid-template-rows: minmax(70px, max-content) minmax(70px, max-content) auto;
+  column-gap: 30px;
+
+  @media screen and (max-width: $medium) {
+    grid-template-columns: max-content 1fr;
+  }
+
+  @media screen and (max-width: $small) {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+
+
+  &__title {
+    @media screen and (max-width: $medium) {
+      grid-column: span 2;
+    }
+
+    @media screen and (max-width: $small) {
+      grid-column: auto;
+    }
+  }
+
+  &__howtoget {
+    max-width: 450px;
+  }
+
+  &__map {
+    align-self: center;
+    grid-row: 1 / 4;
+    grid-column: 2 / 3;
+
+    @media screen and (max-width: $medium) {
+      grid-row: 3 / 4;
+      grid-column: 1 / 3;
+      margin-top: 5%;
+    }
+
+    @media screen and (max-width: $small) {
+      grid-column: 1 / 2;
+      grid-row: 4 / 5;
+    }
+
+  }
+
+  &__actions-list {
+    grid-template-columns: repeat(2, auto);
+    justify-content: start;
+    column-gap: 44px;
+    row-gap: 18px;
+
+    @media screen and (max-width: $medium) {
+      grid-template-columns: auto;
+    }
+
+    @media screen and (max-width: $small) {
+      margin-bottom: 5%;
     }
   }
 }
