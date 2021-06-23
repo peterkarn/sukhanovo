@@ -1,7 +1,9 @@
 .footer {
+  margin-top: auto;
   padding: 40px 0 45px;
   color: $footerText;
   background-color: $dark;
+
 
   @include adaptiv-value('font-size', 15, 14, 1);
 
@@ -111,9 +113,12 @@
   .col__title {
     &:after {
       content: url("../img/common/down-arrow.svg");
+      position: relative;
+      top: 2px;
       display: inline-block;
       margin: 0 0 0 5px;
       transition: transform 0.3s;
+      line-height: 0;
     }
   }
 

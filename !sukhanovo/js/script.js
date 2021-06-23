@@ -26,13 +26,26 @@ document.addEventListener('DOMContentLoaded', function () {
   // Menu burger
   const iconMenu = document.querySelector('.menu__icon');
   const menuBody = document.querySelector('.menu__body');
+  const disableBodyScroll = bodyScrollLock.disableBodyScroll;
+  const enableBodyScroll = bodyScrollLock.enableBodyScroll;
+
   if (iconMenu) {
     iconMenu.addEventListener("click", function (e) {
       document.body.classList.toggle('_lock');
       iconMenu.classList.toggle('_active');
       menuBody.classList.toggle('_active');
+
+      if (e.target.classList.contains('_active')) {
+         disableBodyScroll(document.body);
+      } else {
+        enableBodyScroll(document.body);
+      }
     });
   }
+
+//header
+  
+  
 
 //webP support
 

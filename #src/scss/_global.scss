@@ -51,9 +51,19 @@ img {
   height: auto;
 }
 
+.site-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .page-section {
   @include adaptiv-value('padding-top', 111, 70, 1);
   @include adaptiv-value('padding-bottom', 111, 70, 1);
+
+  &.onlytop {
+    padding-bottom: 0;
+  }
 }
 
 .container {
@@ -152,6 +162,12 @@ button {
     visibility: hidden;
     transition: all 0.3s;
     transition-delay: 0.2s;
+
+    @media screen and (max-width: $medium) {
+      opacity: 0.6;
+      visibility: visible;
+      transform: translate(-50%, -50%);
+    }
   }
 
   &:hover {
@@ -167,4 +183,36 @@ button {
 
 .bold {
   font-weight: 700;
+}
+
+.phones {
+
+  &__link {
+    display: block;
+    position: relative;
+    margin-bottom: 1.2em;
+    font-size: 20px;
+    text-decoration: underline;
+
+    @media screen and (max-width: $small) {
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: $xsmall) {
+      font-size: 14px;
+    }
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      margin-right: 0.3em;
+      background-image: url("../img/common/icon-phone.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      vertical-align: middle;
+    }
+  }
 }
