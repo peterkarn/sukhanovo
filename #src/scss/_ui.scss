@@ -121,8 +121,6 @@
   }
 }
 
-//
-
 
 //titles
 
@@ -330,8 +328,6 @@
   text-align: center;
   color: $grey;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-
-
 }
 
 .tabs__btn_active {
@@ -437,4 +433,21 @@
 
 .tabs__arrow--prev {
   left: -204px;
+}
+
+// tip
+
+.tip {
+  color: $dark;
+  background-color: $white;
+
+  &__number {}
+
+  &__secion {}
+
+  &__square {
+    margin: 8px 0 6px;
+  }
+
+  &__avaliable {}
 }

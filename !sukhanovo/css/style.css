@@ -1760,6 +1760,45 @@ button.swiper-pagination-bullet {
   backface-visibility: hidden;
 }
 
+.tippy-box {
+  background-color: #FAFAFA;
+}
+
+.tippy-arrow {
+  color: #FAFAFA;
+}
+
+.tippy-box[data-animation=scale][data-placement^=top] {
+  -webkit-transform-origin: bottom;
+      -ms-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+.tippy-box[data-animation=scale][data-placement^=bottom] {
+  -webkit-transform-origin: top;
+      -ms-transform-origin: top;
+          transform-origin: top;
+}
+
+.tippy-box[data-animation=scale][data-placement^=left] {
+  -webkit-transform-origin: right;
+      -ms-transform-origin: right;
+          transform-origin: right;
+}
+
+.tippy-box[data-animation=scale][data-placement^=right] {
+  -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+          transform-origin: left;
+}
+
+.tippy-box[data-animation=scale][data-state=hidden] {
+  -webkit-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+          transform: scale(0.5);
+  opacity: 0;
+}
+
 .btn {
   position: relative;
   display: -webkit-inline-box;
@@ -2222,6 +2261,15 @@ button.swiper-pagination-bullet {
 
 .tabs__arrow--prev {
   left: -204px;
+}
+
+.tip {
+  color: #333;
+  background-color: #FAFAFA;
+}
+
+.tip__square {
+  margin: 8px 0 6px;
 }
 
 .header {
@@ -3127,6 +3175,17 @@ button.swiper-pagination-bullet {
 
 .plan__svg path:hover {
   fill: rgba(68, 67, 67, 0.6);
+}
+
+.plan .house:focus,
+.plan .house:active {
+  outline: none;
+}
+
+.plan .house:focus path,
+.plan .house:active path {
+  stroke: rgba(253, 186, 97, 0.5);
+  stroke-width: 4px;
 }
 
 .footer {

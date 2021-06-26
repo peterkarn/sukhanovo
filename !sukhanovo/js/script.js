@@ -426,3 +426,8 @@ document.addEventListener('DOMContentLoaded', function () {
   breakpointChecker();
 });
 
+document.querySelectorAll('.house').forEach(element => {
+  element.addEventListener('mouseenter', () => {
+    debugger
+  })
+});

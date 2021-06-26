@@ -1,2 +1,32 @@
 @import "./libs/yBox";
-@import "./libs/swiper"
+@import "./libs/swiper";
+
+.tippy-box {
+  background-color: $white;
+}
+
+.tippy-arrow {
+  color: $white;
+}
+
+
+.tippy-box[data-animation=scale][data-placement^=top] {
+  transform-origin: bottom
+}
+
+.tippy-box[data-animation=scale][data-placement^=bottom] {
+  transform-origin: top
+}
+
+.tippy-box[data-animation=scale][data-placement^=left] {
+  transform-origin: right
+}
+
+.tippy-box[data-animation=scale][data-placement^=right] {
+  transform-origin: left
+}
+
+.tippy-box[data-animation=scale][data-state=hidden] {
+  transform: scale(.5);
+  opacity: 0
+}

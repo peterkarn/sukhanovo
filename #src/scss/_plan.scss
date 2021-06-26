@@ -23,4 +23,14 @@
       }
     }
   }
+
+  .house:focus,
+  .house:active {
+    outline: none;
+
+    path {
+      stroke: rgba($gold, 0.5);
+      stroke-width: 4px;
+    }
+  }
 }
