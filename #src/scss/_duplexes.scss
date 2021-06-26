@@ -1,0 +1,270 @@
+.duplexes {
+  .header {
+    background: rgba(30, 31, 34, .5);
+    backdrop-filter: blur(10px);
+  }
+
+  &__offer {
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      width: 70%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
+
+      @media screen and (max-width: $xsmall) {
+        display: none;
+      }
+    }
+  }
+
+  .offer__title {
+    color: $gold;
+  }
+
+  .offer__bg:after {
+    height: 45%;
+  }
+}
+
+@supports (backdrop-filter: blur(3px)) {
+  .duplexes__offer:after {
+    backdrop-filter: blur(3px);
+    width: 50%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
+  }
+}
+
+//materials
+
+.materials {
+
+  &__subtitle {
+    @include adaptiv-value('margin-bottom', 40, 30, 1);
+  }
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__card {
+    box-sizing: border-box;
+
+    @media screen and (min-width: 1180px) {
+      max-width: 214px;
+    }
+
+
+    &:not(:last-child) {
+      @media screen and (min-width: 1180px) {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__controls {
+    @media screen and (min-width: 1180px) {
+      display: none;
+    }
+
+    .controls__btns {
+      margin: 20px auto;
+    }
+  }
+}
+
+.card-material {
+  padding: 8px;
+  border-radius: 5px;
+  background-color: $dark;
+  text-align: center;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 8px;
+    border: 1px solid $gold;
+    border-radius: 5px;
+  }
+
+  &__icon {
+    overflow: hidden;
+    width: 82px;
+    height: 82px;
+    margin-bottom: 11px;
+    border-radius: 50%;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    color: $gold;
+  }
+
+  &__text {
+    color: $white;
+    font-size: 13px;
+  }
+}
+
+//disclaimer
+
+.disclaimer {
+  position: relative;
+  background-image: url("../img/duplexes/disclaimer/disclaimer-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include adaptiv-value('padding-top', 151, 133, 1);
+  @include adaptiv-value('padding-bottom', 151, 133, 1);
+
+
+  @media screen and (min-width: $small + 1) and (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 95dpi) {
+    background-image: url("../img/duplexes/disclaimer/disclaimer-bg@2x.jpg");
+  }
+
+  @media screen and (max-width: $small) {
+    background-image: url("../img/duplexes/disclaimer/disclaimer-bg-mob.jpg");
+  }
+
+  @media screen and (max-width: $small) and (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 95dpi) {
+    background-image: url("../img/duplexes/disclaimer/disclaimer-bg-mob@2x.jpg");
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(#1E1F22, 0.5);
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    @include adaptiv-value('margin-bottom', 30, 20, 1);
+  }
+
+  &__subtitle {
+    margin: 0 auto;
+    max-width: 480px;
+  }
+
+}
+
+//documents
+
+.documents {
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 30px;
+    row-gap: 36px;
+
+    @media screen and (max-width: 1141px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (max-width: $medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: $xsmall) {
+      grid-template-columns: repeat(1, 1fr);
+      place-items: center;
+    }
+  }
+
+  &__item {}
+
+  &__doc {}
+}
+
+.doc {
+  display: flex;
+  align-items: center;
+  padding: 0 7px;
+  font-size: 14px;
+
+  &__img {
+    flex: 0 0 40px;
+    margin-right: 10px;
+  }
+
+  &__title {
+    font-weight: 400;
+  }
+
+  &__descr {
+    opacity: 0.6;
+    transition: opacity .3s;
+  }
+
+  &:hover {
+
+
+    .doc__title {
+      text-decoration: underline;
+    }
+
+    .doc__descr {
+      opacity: 1;
+    }
+  }
+}
+
+//compare
+
+.compare {
+  line-height: 160%;
+  @include adaptiv-value('font-size', 15, 13, 1);
+
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px
+  }
+
+  &__text {}
+
+  &__list {
+    @include adaptiv-value('margin-bottom', 20, 15, 1);
+  }
+
+  &__paragraph {
+    @include adaptiv-value('margin-bottom', 20, 15, 1);
+  }
+
+  &__btns {
+    .btn {
+      min-width: 256px;
+    }
+  }
+}
+
+.with-bull {}
+
+.btns-block {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+
+  .btn {
+    margin: 10px 15px;
+  }
+}

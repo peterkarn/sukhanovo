@@ -36,36 +36,63 @@ document.addEventListener('DOMContentLoaded', function () {
       menuBody.classList.toggle('_active');
 
       if (e.target.classList.contains('_active')) {
-         disableBodyScroll(document.body);
+        disableBodyScroll(document.body);
       } else {
         enableBodyScroll(document.body);
       }
     });
   }
 
-//header
+  //header
+
+  const
+    header = document.querySelector('.header');
+  let lastScrollTop = 0;
+  
+  window.addEventListener('scroll', () => {
+    let scrollDistance = window.scrollY;
+    
+    
+    if (scrollDistance > lastScrollTop) {
+      header.classList.remove('scrollable');
+      header.style.opacity = "";
+      header.style.transform = 'translateY(-10px)';
+    }  else {
+      header.style.transform = 'translateY(0)';
+      header.classList.add('scrollable');
+    }
+
+    lastScrollTop = scrollDistance;
+
+    if (lastScrollTop < 100) {
+      header.classList.remove('scrollable');
+       header.style.opacity = "";
+       header.style.transform = 'translateY(0)';
+    }
+  })
+
   
   
 
-//webP support
+  //webP support
 
-function testWebP(callback) {
+  function testWebP(callback) {
 
   var webP = new Image();
   webP.onload = webP.onerror = function () {
     callback(webP.height == 2);
   };
   webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
-}
-
-testWebP(function (support) {
-
-  if (support == true) {
-    document.querySelector('body').classList.add('webp');
-  } else {
-    document.querySelector('body').classList.add('no-webp');
   }
-});
+
+  testWebP(function (support) {
+
+    if (support == true) {
+      document.querySelector('body').classList.add('webp');
+    } else {
+      document.querySelector('body').classList.add('no-webp');
+    }
+  });
 
   //Slider
 
@@ -81,9 +108,13 @@ testWebP(function (support) {
   //audio
 
   const audioBtn = document.querySelector('.audio-btn');
-  audioBtn.addEventListener('click', (e) => {
-    e.target.classList.toggle('playing');
-  })
+
+  if (audioBtn) {
+    audioBtn.addEventListener('click', (e) => {
+      e.target.classList.toggle('playing');
+    });
+  }
+  
 
   //yBox
 
@@ -343,6 +374,55 @@ testWebP(function (support) {
       return _slideUp(target, duration);
     }
   }
-  
+
+  //materials slider 
+
+  const breakpoint = window.matchMedia('(min-width:1180px)'); //слайдер только ниже 
+  let mySwiper;
+
+  const breakpointChecker = function () {
+    if (breakpoint.matches === true) {
+      if (mySwiper !== undefined) mySwiper.destroy(true, true);
+      document.querySelector('.materials__wrapper').classList.remove('swiper-wrapper');
+      document.querySelector('.materials__wrapper').classList.add('materials__wrapper');
+      document.querySelector('.materials__container').classList.remove('swiper-container');
+      document.querySelectorAll('.materials__card').forEach(card => {
+        card.classList.remove('swiper-slide')
+      });
+      return;
+    } else if (breakpoint.matches === false) {
+      document.querySelector('.materials__wrapper').classList.add('swiper-wrapper');
+      document.querySelector('.materials__wrapper').classList.remove('materials__wrapper');
+      document.querySelector('.materials__container').classList.add('swiper-container');
+      document.querySelectorAll('.materials__card').forEach(card => {
+        card.classList.add('swiper-slide')
+      });
+      return enableSwiper();
+    }
+  };
+
+  const enableSwiper = function () {
+    mySwiper = new Swiper('.materials__container', {
+      grabCursor: true,
+      loop: true,
+      navigation: {
+        nextEl: '.controls__btns .controls__next',
+        prevEl: '.controls__btns .controls__prev',
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          centeredSlides: true,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 10
+        }
+      }
+    });
+  };
+
+  breakpoint.addListener(breakpointChecker);
+  breakpointChecker();
 });
 

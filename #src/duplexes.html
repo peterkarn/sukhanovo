@@ -10,11 +10,301 @@
 </head>
 
 <body>
-  <div class="site-container">
+  <div class="site-container duplexes">
     @@include('_header.html')
+    <main class="main">
+      <section class="offer duplexes__offer">
+        <!-- offer bg image -->
+        <div class="offer__bg">
+          <picture>
+            <source srcset="img/duplexes/hero/hero-mob.webp, img/duplexes/hero/hero-mob@2x.webp 2x"
+              media="(max-width: 576px)" type="image/webp">
+            <source srcset="img/duplexes/hero/hero-mob.jpg, img/duplexes/hero/hero-mob@2x.jpg 2x"
+              media="(max-width: 576px)" type="image/jpeg">
+            <source srcset="img/duplexes/hero/hero.webp, img/duplexes/hero/hero@2x.webp 2x" media="(max-width: 1400px)"
+              type="image/webp">
+            <source srcset="img/duplexes/hero/hero.jpg, img/duplexes/hero/hero@2x.jpg" media="(max-width: 1400px)"
+              type="image/jpeg">
+            <source srcset="img/duplexes/hero/hero@2x.webp" media="(min-width: 1401px)" type="image/webp">
+            <source srcset="img/duplexes/hero/hero@2x.jpg" media="(min-width: 1401px)" type="image/jpeg">
+            <img src="offer-bg-mob.webp" alt="Суханово" style="width:100%;">
+          </picture>
+        </div>
+        <!-- *** -->
+        <div class="container offer__container">
+          <div class="offer__inner">
+            <h1 class="main-title offer__title">
+              Что такое дуплексы?
+            </h1>
+            <div class="offer__subtitle text">
+              <p>
+                Оптимальный вариант для тех, кто мечтает жить в загородном доме, наслаждаться отдельной придомовой
+                территорией, удобной планировкой, высокими потолками и единым архитектурным стилем
+              </p>
+              <p>
+                Дуплекс — вариант двух- или трехэтажного загородного дома, разделенный на две половины (для двух семей)
+                под
+                общей крышей. Каждая часть оборудована собственным входом и разделена звукоизолированной стеной.
+              </p>
+            </div>
+            <a class="btn btn_primary" href="#">
+              Выбрать дом
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="compare page-section white-section">
+        <div class="container compare__container">
+          <div class="compare__text">
+            <h2 class="page-title">
+              Варианты планировок
+            </h2>
+            <p class="compare__paragraph">
+              Дуплексы продаются без отделки и со свободной планировкой.
+            </p>
+            <p class="compare__paragraph bold">
+              Стандартное расположение комнат:
+            </p>
+            <ul class="compare__list with-bull">
+              <li><span class="bold">Первый этаж:</span> кухня совмещенная с гостиной, санузел, техническое помещение.
+              </li>
+              <li><span class="bold">Второй этаж:</span> 2 спальные комнаты, санузел и просторная гардеробная.</li>
+              <li><span class="bold">Третий этаж:</span> мансарда, которую можно использовать в качестве жилой комнаты,
+                чердака или гостиной.</li>
+            </ul>
+            <p class="compare__paragraph">
+              Вы можете заказать дуплекс со стандартной планировкой или выбрать иное расположение комнат так, чтобы
+              почувствовать себя по-настоящему дома.
+            </p>
+            <div class="btns-block compare__btns">
+              <button class="btn btn_primary">Получить консультацию</button>
+              <a href="" class="btn btn_secondary">Перейти к подбору дома</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="materials page-section centered onlybottom">
+        <div class="container">
+          <h2 class="page-title materials__title">
+            Материалы дома
+          </h2>
+          <div class="materials__subtitle text">
+            <p>Для возведения домов применены наиболее качественные материалы, продукция которых прочно зарекомендовала
+              себя в профессиональном строительстве.
+            </p>
+            <p> За счет общей стены и использования высококачественных материалов, на отоплении в дуплексе можно
+              сэкономить до 30% по сравнению с оплатой тепла в отдельно стоящем коттедже.</p>
+          </div>
+          <div class="materials__container">
+            <div class="materials__wrapper">
+              <div class="materials__card card-material">
+                <div class="card-material__inner">
+                  <div class="card-material__icon">
+                    <img src="img/duplexes/materials/1.jpg" alt="Материал изготовления дома">
+                  </div>
+                  <h3 class="card-material__title">
+                    Фундамент
+                  </h3>
+                  <p class="card-material__text">
+                    Ленточный, на шестиметровых сваях, обеспечивающий высокую устойчивость конструкции
+                  </p>
+                </div>
+              </div>
+              <div class="materials__card card-material">
+                <div class="card-material__inner">
+                  <div class="card-material__icon">
+                    <img src="img/duplexes/materials/2.jpg" alt="Материал изготовления дома">
+                  </div>
+                  <h3 class="card-material__title">
+                    Стены
+                  </h3>
+                  <p class="card-material__text">
+                    Керамический блок Поротерм 44, сохраняет тепло , экологический материал который дышит
+                  </p>
+                </div>
+              </div>
+              <div class="materials__card card-material">
+                <div class="card-material__inner">
+                  <div class="card-material__icon">
+                    <img src="img/duplexes/materials/3.jpg" alt="Материал изготовления дома">
+                  </div>
+                  <h3 class="card-material__title">
+                    Облицовка
+                  </h3>
+                  <p class="card-material__text">
+                    Выполнена кирпичом «Гжель» с лучшими в России прочностными характеристиками
+                  </p>
+                </div>
+              </div>
+              <div class="materials__card card-material">
+                <div class="card-material__inner">
+                  <div class="card-material__icon">
+                    <img src="img/duplexes/materials/4.jpg" alt="Материал изготовления дома">
+                  </div>
+                  <h3 class="card-material__title">
+                    Остекление
+                  </h3>
+                  <p class="card-material__text">
+                    Энергосберегающие, двухкамерные стеклопакеты с повышенной шумоизоляцией.
+                  </p>
+                </div>
+              </div>
+              <div class="materials__card card-material">
+                <div class="card-material__inner">
+                  <div class="card-material__icon">
+                    <img src="img/duplexes/materials/5.jpg" alt="Материал изготовления дома">
+                  </div>
+                  <h3 class="card-material__title">
+                    Кровля
+                  </h3>
+                  <p class="card-material__text">
+                    Мягкая кровля от Техниколь - ведущего производителя надежных кровельных материалов.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="materials__controls controls">
+              <div class="controls__btns">
+                <button class="swiper-button-prev controls__prev"></button>
+                <button class="swiper-button-next controls__next"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="disclaimer">
+        <div class="container disclaimer__container">
+          <h2 class="page-title centered disclaimer__title">
+            Дуплекс под ключ
+          </h2>
+          <div class="text centered disclaimer__subtitle">
+            <p>
+              При покупке дуплекса вы можете дозаказать услуги ремонта и отделки. Мы разработаем для вас
+              персональный дизайн-проект, учитывая все пожелания
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="documents page-section">
+        <div class="container">
+          <h2 class="page-title centered">
+            Документы
+          </h2>
+          <ul class="documents__list">
+            <li class="documents__item">
+              <a class="documents__doc doc" href="#" download>
+                <img class="doc__img" src="img/duplexes/documents/icon-pdf.svg" aria-hidden="true">
+                <div class="doc__text">
+                  <h4 class="doc__title">
+                    Проектная декларация
+                  </h4>
+                  <p class="doc__descr">
+                    <span class="doc__type">PDF</span>, <span class="doc__size">246</span> Кб
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li class="documents__item">
+              <a class="documents__doc doc" href="#" download>
+                <img class="doc__img" src="img/duplexes/documents/icon-pdf.svg" aria-hidden="true">
+                <div class="doc__text">
+                  <h4 class="doc__title">
+                    Проектная декларация
+                  </h4>
+                  <p class="doc__descr">
+                    <span class="doc__type">PDF</span>, <span class="doc__size">246</span> Кб
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li class="documents__item">
+              <a class="documents__doc doc" href="#" download>
+                <img class="doc__img" src="img/duplexes/documents/icon-pdf.svg" aria-hidden="true">
+                <div class="doc__text">
+                  <h4 class="doc__title">
+                    Проектная декларация
+                  </h4>
+                  <p class="doc__descr">
+                    <span class="doc__type">PDF</span>, <span class="doc__size">246</span> Кб
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li class="documents__item">
+              <a class="documents__doc doc" href="#" download>
+                <img class="doc__img" src="img/duplexes/documents/icon-pdf.svg" aria-hidden="true">
+                <div class="doc__text">
+                  <h4 class="doc__title">
+                    Проектная декларация
+                  </h4>
+                  <p class="doc__descr">
+                    <span class="doc__type">PDF</span>, <span class="doc__size">246</span> Кб
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li class="documents__item">
+              <a class="documents__doc doc" href="#" download>
+                <img class="doc__img" src="img/duplexes/documents/icon-pdf.svg" aria-hidden="true">
+                <div class="doc__text">
+                  <h4 class="doc__title">
+                    Проектная декларация
+                  </h4>
+                  <p class="doc__descr">
+                    <span class="doc__type">PDF</span>, <span class="doc__size">246</span> Кб
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li class="documents__item">
+              <a class="documents__doc doc" href="#" download>
+                <img class="doc__img" src="img/duplexes/documents/icon-pdf.svg" aria-hidden="true">
+                <div class="doc__text">
+                  <h4 class="doc__title">
+                    Проектная декларация
+                  </h4>
+                  <p class="doc__descr">
+                    <span class="doc__type">PDF</span>, <span class="doc__size">246</span> Кб
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li class="documents__item">
+              <a class="documents__doc doc" href="#" download>
+                <img class="doc__img" src="img/duplexes/documents/icon-pdf.svg" aria-hidden="true">
+                <div class="doc__text">
+                  <h4 class="doc__title">
+                    Проектная декларация
+                  </h4>
+                  <p class="doc__descr">
+                    <span class="doc__type">PDF</span>, <span class="doc__size">246</span> Кб
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li class="documents__item">
+              <a class="documents__doc doc" href="#" download>
+                <img class="doc__img" src="img/duplexes/documents/icon-pdf.svg" aria-hidden="true">
+                <div class="doc__text">
+                  <h4 class="doc__title">
+                    Проектная декларация
+                  </h4>
+                  <p class="doc__descr">
+                    <span class="doc__type">PDF</span>, <span class="doc__size">246</span> Кб
+                  </p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
     @@include('_footer.html')
   </div>
   </div>
+  <script src="js/vendors.min.js"></script>
+  <script src="js/script.min.js"></script>
 </body>
 
 </html>

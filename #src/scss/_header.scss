@@ -5,8 +5,8 @@
   z-index: 10;
   width: 100%;
   background-color: transparent;
-  transition: all 0.3s;
   color: #fff;
+  transition: all 0.5s;
 
   @media screen and (max-width: $medium) {
     padding: 15px 0;
@@ -41,8 +41,17 @@
   }
 
   &.scrollable {
-    background-color: rgba(0, 0, 0, 0.668);
+    position: fixed;
+    background: rgba(30, 31, 34, .9);
     backdrop-filter: blur(10px);
+
+    .menu__logo img {
+      @media screen and (min-width: $medium + 1) {
+        max-height: 50px;
+        width: auto;
+      }
+
+    }
   }
 }
 
@@ -236,6 +245,7 @@
 
     &._active {
       @media screen and (max-width: $medium) {
+        height: 100vh;
         transform: translateX(0);
       }
     }
