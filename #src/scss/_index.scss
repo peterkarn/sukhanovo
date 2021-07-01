@@ -530,6 +530,7 @@
 
   &__tabtitle {
     @include adaptiv-value('margin-bottom', 30, 20, 1);
+    font-weight: 700;
   }
 
   &__tabtext {

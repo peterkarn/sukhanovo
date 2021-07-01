@@ -1,5 +1,8 @@
 .plan {
-  padding: 150px 0 110px;
+
+  @media screen and (max-width: $medium) {
+    display: none;
+  }
 
   &__wrapper {
     position: relative;
@@ -19,7 +22,7 @@
       transition: fill 0.2s;
 
       &:hover {
-        fill: rgba(rgb(68, 67, 67), 0.6);
+        fill: rgba($gold, 0.5);
       }
     }
   }
@@ -31,6 +34,23 @@
     path {
       stroke: rgba($gold, 0.5);
       stroke-width: 4px;
+    }
+  }
+
+
+}
+
+.page-plan {
+
+  .compare {
+    display: none;
+
+    &__container {
+      grid-template-columns: auto;
+    }
+
+    @media screen and (max-width: $medium) {
+      display: block;
     }
   }
 }

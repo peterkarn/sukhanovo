@@ -1,11 +1,20 @@
 .duplexes {
-  .header {
-    background: rgba(30, 31, 34, .5);
-    backdrop-filter: blur(10px);
-  }
 
   &__offer {
     position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(30, 31, 34, .68) 5.31%, rgba(30, 31, 34, .3) 17.42%, rgba(30, 31, 34, .20) 32.27%, rgba(30, 31, 34, .20) 36.77%, rgba(30, 31, 34, .30) 47.19%, rgba(30, 31, 34, .50) 64.37%, rgba(30, 31, 34, 0) 70.62%);
+    }
+
+
 
     &:after {
       content: "";
@@ -119,7 +128,7 @@
   position: relative;
   background-image: url("../img/duplexes/disclaimer/disclaimer-bg.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: 20% 60%;
   background-repeat: no-repeat;
   @include adaptiv-value('padding-top', 151, 133, 1);
   @include adaptiv-value('padding-bottom', 151, 133, 1);
@@ -237,7 +246,11 @@
   &__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px
+    gap: 25px;
+
+    @media screen and (max-width: $small) {
+      grid-template-columns: auto;
+    }
   }
 
   &__text {}
@@ -255,9 +268,21 @@
       min-width: 256px;
     }
   }
+
+  .compare-block {}
 }
 
-.with-bull {}
+.with-bull {
+  li {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  li:before {
+    content: "•";
+    margin-right: 0.5em;
+  }
+}
 
 .btns-block {
   display: flex;

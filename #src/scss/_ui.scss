@@ -279,70 +279,145 @@
 
 //tabs
 
+
 .tabs {
   position: relative;
   text-align: center;
-}
 
-.tabs__list {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  list-style-type: none;
-  font-weight: 700;
-  @include adaptiv-value('font-size', 36, 22, 1);
-  @include adaptiv-value('margin-bottom', 40, 30, 1);
-  @include adaptiv-value('padding-bottom', 25, 10, 1);
+  &__list {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    list-style-type: none;
+    @include adaptiv-value('font-size', 36, 22, 1);
+    @include adaptiv-value('margin-bottom', 40, 30, 1);
+    @include adaptiv-value('padding-bottom', 25, 10, 1);
 
-  &:after,
-  &:before {
-    content: "";
-    position: absolute;
+    &:after,
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: 0;
+    }
+
+    &:after {
+      width: 80%;
+      height: 2px;
+      background-color: $grey;
+    }
+
+    &_small {
+      padding-bottom: 1em;
+      @include adaptiv-value('margin-bottom', 22, 20, 1);
+      @include adaptiv-value('font-size', 16, 15, 1);
+
+      @media screen and (max-width: 340px) {
+        font-size: 13px;
+      }
+    }
+
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &__btn {
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    color: $grey;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+  &__btn_active {
+    color: $gold;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    pointer-events: none;
+  }
+
+  &__content {
+    display: none;
+  }
+
+  &__content_active {
     display: block;
-    bottom: 0;
+  }
+}
+
+.outer-tabs {
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 22px;
+    align-items: center;
+    @include adaptiv-value('margin-bottom', 34, 20, 1);
+
+    @media screen and (max-width: $medium) {
+      grid-template-columns: max-content;
+      justify-content: start;
+    }
   }
 
-  &:after {
-    width: 80%;
-    height: 2px;
-    background-color: $grey;
+  &__list {
+    position: relative;
+    display: flex;
+    padding-bottom: 8px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      height: 2px;
+      background-color: $grey;
+      width: 100%;
+    }
   }
 
-  &_small {
-    padding-bottom: 1em;
-    @include adaptiv-value('margin-bottom', 22, 20, 1);
-    @include adaptiv-value('font-size', 16, 15, 1);
+  // &__props {
+  //   &.hidden {
+  //     display: none;
+  //   }
+  // }
+
+  &__item:not(:last-child) {
+    margin-right: 10px;
   }
 
+  &__btn {
+    @include adaptiv-value('font-size', 20, 18, 1);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    color: $grey;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+  &__btn_active {
+    color: $gold;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    pointer-events: none;
+  }
+
+  &__content {
+    display: none;
+  }
+
+  &__content_active {
+    display: block;
+  }
 }
 
-.tabs__item:not(:last-child) {
-  margin-right: 10px;
-}
 
-.tabs__btn {
-  border: none;
-  cursor: pointer;
-  text-align: center;
-  color: $grey;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-.tabs__btn_active {
-  color: $gold;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  pointer-events: none;
-}
-
-.tabs__content {
+.outer-tab__props.hidden {
   display: none;
 }
 
-.tabs__content_active {
-  display: block;
-}
 
 .content {
   text-align: left;
@@ -435,6 +510,14 @@
   left: -204px;
 }
 
+.tabs [data-visible="true"] {
+  display: block;
+}
+
+.tabs [data-visible="false"] {
+  display: none;
+}
+
 // tip
 
 .tip {
@@ -450,4 +533,132 @@
   }
 
   &__avaliable {}
+}
+
+//compare block
+
+.compare-block {
+
+  &__tabs {
+    display: flex;
+    align-items: flex-start;
+
+    @media screen and (max-width: $medium) {
+      display: block;
+    }
+  }
+
+  .tabs {
+
+    &__list {
+      position: relative;
+      z-index: 2;
+      flex-direction: column;
+      align-items: stretch;
+      font-size: 20px;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      margin-right: -1px;
+      background-color: #fff;
+
+      &:after {
+        display: none;
+      }
+
+      @media screen and (max-width: $medium) {
+        display: flex;
+        flex-direction: row;
+        margin-right: 0;
+      }
+    }
+
+    &__item {
+      white-space: nowrap;
+      width: 100%;
+
+      &:not(:last-child) {
+        margin: 0 0 11px 0;
+      }
+
+      @media screen and (max-width: $medium) {
+        &:not(:last-child) {
+          margin: 0;
+        }
+      }
+    }
+
+    &__btn {
+      padding: 16px;
+      width: 100%;
+      border: 1px solid $gold;
+      background-color: #fff;
+
+      &_active {
+        @media screen and (min-width: $medium + 1) {
+          border-right: 1px solid #fff;
+        }
+
+        @media screen and (max-width: $medium) {
+          border-bottom: 1px solid #fff;
+        }
+      }
+
+      @media screen and (max-width: $medium) {
+        padding: 7px;
+        font-size: 16px;
+      }
+    }
+
+    &__content {
+      width: 100%;
+      border: 1px solid $gold;
+      background-color: #fff;
+
+      @media screen and (max-width: $medium) {
+        padding-top: 26px;
+        border-top: transparent;
+      }
+
+      &_active {
+        .content {
+          margin: 0 auto;
+          max-width: 283px;
+        }
+      }
+    }
+  }
+}
+
+//breadcrumbs
+
+.breadcrumbs {
+  @include adaptiv-value('margin-bottom', 34, 20, 1);
+
+  &__list {
+    display: flex;
+    font-weight: 700;
+    color: $grey;
+
+    @media screen and (max-width: $medium) {
+      font-weight: 400;
+    }
+
+    li {
+
+      a:last-child {
+        pointer-events: none;
+      }
+
+      &:hover {
+        a:not(:last-child) {
+          text-decoration: underline;
+
+        }
+      }
+
+      span {
+        margin-right: 0.3em;
+      }
+    }
+  }
 }

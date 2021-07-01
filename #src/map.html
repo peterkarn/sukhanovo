@@ -10,9 +10,24 @@
 </head>
 
 <body>
-  <div class="site-container">
-    <!-- @@include('_header.html') -->
-    <div class="main">
+  <div class="site-container white-on-tab">
+    @@include('_header.html')
+    <div class="main page page-plan">
+      <div class="breadcrumbs container">
+        <ul class="breadcrumbs__list">
+          <li>
+            <a href="">
+              Главная
+            </a>
+            <span> - </span>
+          </li>
+          <li>
+            <a href="">
+              Карта
+            </a>
+          </li>
+        </ul>
+      </div>
       <section class="plan">
         <div class="container">
           <h1 class="page-title centered">
@@ -29,11 +44,11 @@
                 <img src="plan/plan.webp" alt="" style="width:100%;">
               </picture>
             </div>
-            <svg class="plan__svg" viewBox="0 0 980 520" xmlns:xlink=“http://www.w3.org/1999/xlink"> <a class="house"
-              data-section="1" data-number="1" data-free="продан" data-section="1" data-sqaure="155" xlink:href="#"
-              target="__blank">
-              <path
-                d="M238 155.5L239.5 149.5L240.5 150L244 157L278 156.5L281 153.5H285L296.5 183.5L287 222.5L285 225.5H272.5V229V233H245.5L241 222.5V213L238 204.5L234 186.5L230 178.5L232.5 173L239.5 159L238 155.5Z" />
+            <svg class="plan__svg" viewBox="0 0 980 520" xmlns:xlink="http://www.w3.org/1999/xlink"> <a class="house"
+                data-section="1" data-number="1" data-free="продан" data-section="1" data-sqaure="155" xlink:href="#"
+                target="__blank">
+                <path
+                  d="M238 155.5L239.5 149.5L240.5 150L244 157L278 156.5L281 153.5H285L296.5 183.5L287 222.5L285 225.5H272.5V229V233H245.5L241 222.5V213L238 204.5L234 186.5L230 178.5L232.5 173L239.5 159L238 155.5Z" />
               </a>
               <a class="house" data-section="1" data-number="1" data-free="продан" data-section="1" data-sqaure="155"
                 xlink:href="#" target="__blank">
@@ -173,30 +188,156 @@
           </div>
         </div>
       </section>
+      <section class="compare">
+        <div class="container compare__container">
+          <div class="compare__text">
+            <h2 class="page-title">
+              Выберите дом мечты
+            </h2>
+            <p class="compare__paragraph">
+              Для более комфортного подбора дома, рекомендуем зайти на наш сайт с компьютера.
+            </p>
+          </div>
+          <div class="outer-tabs">
+            <div class="outer-tabs__inner">
+              <ul class="outer-tabs__list">
+                <li class="outer-tabs__item"><button class="outer-tabs__btn outer-tabs__btn_active"
+                    data-tabs-path="firstHouse">Дуплекс
+                    №1</button>
+                </li>
+                <li class="outer-tabs__item"><button class="outer-tabs__btn" data-tabs-path="secondtHouse">
+                    Дуплекс
+                    №2</button></li>
+              </ul>
+              <div class="outer-tab__props">
+                Общий метраж дуплекса: 158&nbsp;м2 <br>
+                Жилой метраж: 98&nbsp;м2
+              </div>
+              <div class="outer-tab__props hidden">
+                Общий метраж дуплекса: 168&nbsp;м2 <br>
+                Жилой метраж: 101&nbsp;м2
+              </div>
+            </div>
+
+            <div class="outer-tabs__content outer-tabs__content_active" data-tabs-target="firstHouse">
+              <div class="content">
+                <!-- compare block-->
+                <div class="compare-block">
+                  <div class="tabs compare-block__tabs compare-block__tabs_first">
+                    <ul class="tabs__list">
+                      <li class="tabs__item"><button class="tabs__btn compare-block__btn tabs__btn_active"
+                          data-tabs-path="1">1 этаж</button>
+                      </li>
+                      <li class="tabs__item"><button class="tabs__btn compare-block__btn" data-tabs-path="2">2
+                          этаж</button>
+                      </li>
+                      <li class="tabs__item"><button class="tabs__btn compare-block__btn" data-tabs-path="3">3
+                          этаж</button>
+                      </li>
+                    </ul>
+                    <div class="tabs__content tabs__content_active" data-tabs-target="1">
+                      <div class="content">
+                        <!-- 1floor -->
+                        <div class="floor1 beer-slider">
+                          <img src="img/before-after/big-left-1-g.jpg" alt="Дуплекс №1 1-этаж" data-visible="true">
+                          <div class="beer-reveal" data-beer-label="after" data-visible="true">
+                            <img src="img/before-after/big-left-1-c.jpg" alt="Дуплекс №1 1-этаж">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tabs__content" data-tabs-target="2">
+                      <div class="content">
+                        <!-- 2floor -->
+                        <div class="floor2 beer-slider">
+                          <img src="img/before-after/big-left-2-g.jpg" alt="Дуплекс №1 2-этаж">
+                          <div class="beer-reveal" data-beer-label="after">
+                            <img src="img/before-after/big-left-2-c.jpg" alt="Дуплекс №1 2-этаж">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tabs__content" data-tabs-target="3">
+                      <div class="content">
+                        <!-- 3 floor -->
+                        <div class="floor3 beer-slider">
+                          <img src="img/before-after/big-left-3-g.jpg" alt="Дуплекс №1 3-этаж">
+                          <div class="beer-reveal" data-beer-label="after">
+                            <img src="img/before-after/big-left-3-c.jpg" alt="Дуплекс №1 3-этаж">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- compare block-->
+              </div>
+            </div>
+
+            <div class="outer-tabs__content" data-tabs-target="secondtHouse">
+              <div class="content">
+                <!-- compare block-->
+                <div class="compare-block">
+                  <div class="tabs compare-block__tabs compare-block__tabs_sec">
+                    <ul class="tabs__list">
+                      <li class="tabs__item"><button class="tabs__btn compare-block__btn tabs__btn_active"
+                          data-tabs-path="1">1 этаж</button>
+                      </li>
+                      <li class="tabs__item"><button class="tabs__btn compare-block__btn" data-tabs-path="2">2
+                          этаж</button>
+                      </li>
+                      <li class="tabs__item"><button class="tabs__btn compare-block__btn" data-tabs-path="3">3
+                          этаж</button>
+                      </li>
+                    </ul>
+                    <div class="tabs__content tabs__content_active" data-tabs-target="1">
+                      <div class="content">
+                        <!-- 1floor -->
+                        <div class="floor1 beer-slider">
+                          <img src="img/before-after/big-left-1-g.jpg" alt="Дуплекс №1 1-этаж" data-visible="true">
+                          <div class="beer-reveal" data-beer-label="after" data-visible="true">
+                            <img src="img/before-after/big-left-1-c.jpg" alt="Дуплекс №1 1-этаж">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tabs__content" data-tabs-target="2">
+                      <div class="content">
+                        <!-- 2floor -->
+                        <div class="floor2 beer-slider">
+                          <img src="img/before-after/big-left-1-g.jpg" alt="Дуплекс №1 2-этаж">
+                          <div class="beer-reveal" data-beer-label="after">
+                            <img src="img/before-after/big-left-1-c.jpg" alt="Дуплекс №1 2-этаж">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tabs__content" data-tabs-target="3">
+                      <div class="content">
+                        <!-- 3 floor -->
+                        <div class="floor3 beer-slider">
+                          <img src="img/before-after/big-left-1-g.jpg" alt="Дуплекс №1 3-этаж">
+                          <div class="beer-reveal" data-beer-label="after">
+                            <img src="img/before-after/big-left-1-c.jpg" alt="Дуплекс №1 3-этаж">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- compare block-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- </div> -->
+      </section>
     </div>
     @@include('_footer.html')
   </div>
   </div>
   <script src="js/vendors.js"></script>
-  <script>
-    document.querySelectorAll('[data-free="продан"], [data-free="зарезервирован"]').forEach(element => {
-      element.removeAttribute("xlink:href");
-      element.style.cursor = "not-allowed"
-    });
-
-    const instances = tippy(document.querySelectorAll('.house'), {
-      content: (instances) => `
-      <div class="tip">
-        <span class="tip__number"> Дом номер ${instances.getAttribute('data-number')}</span>
-        <span class="tip__secion"> Секция ${instances.getAttribute('data-section')}</span>
-        <p class="tip__square" style=" text-align:center">Площадь ${instances.getAttribute('data-sqaure')} кв.м.</p>
-        <p class="tip__avaliable" style="text-align:center">${instances.getAttribute('data-free')}</p>
-      </div>  
-        `,
-      allowHTML: true,
-      animation: 'scale'
-    });
-  </script>
+  <script src="js/script.min.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-@@include('./tabs.js', {});
+
 
 document.addEventListener('DOMContentLoaded', function () {
   // Menu burger
@@ -355,31 +355,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //materials slider 
 
-  const breakpoint = window.matchMedia('(min-width:1180px)'); //слайдер только ниже 
-  let mySwiper;
+  if (document.querySelector('.materials__wrapper')) {
+    const breakpoint = window.matchMedia('(min-width:1180px)'); //слайдер только ниже 
+    let mySwiper;
 
-  const breakpointChecker = function () {
-    if (breakpoint.matches === true) {
-      if (mySwiper !== undefined) mySwiper.destroy(true, true);
-      document.querySelector('.materials__wrapper').classList.remove('swiper-wrapper');
-      document.querySelector('.materials__wrapper').classList.add('materials__wrapper');
-      document.querySelector('.materials__container').classList.remove('swiper-container');
-      document.querySelectorAll('.materials__card').forEach(card => {
-        card.classList.remove('swiper-slide')
-      });
-      return;
-    } else if (breakpoint.matches === false) {
-      document.querySelector('.materials__wrapper').classList.add('swiper-wrapper');
-      document.querySelector('.materials__wrapper').classList.remove('materials__wrapper');
-      document.querySelector('.materials__container').classList.add('swiper-container');
-      document.querySelectorAll('.materials__card').forEach(card => {
-        card.classList.add('swiper-slide')
-      });
-      return enableSwiper();
-    }
-  };
-
-  const enableSwiper = function () {
+     const breakpointChecker = function () {
+       if (breakpoint.matches === true) {
+         if (mySwiper !== undefined) mySwiper.destroy(true, true);
+         document.querySelector('.materials__wrapper').classList.remove('swiper-wrapper');
+         document.querySelector('.materials__wrapper').classList.add('materials__wrapper');
+         document.querySelector('.materials__container').classList.remove('swiper-container');
+         document.querySelectorAll('.materials__card').forEach(card => {
+           card.classList.remove('swiper-slide')
+         });
+         return;
+       } else if (breakpoint.matches === false) {
+         document.querySelector('.materials__wrapper').classList.add('swiper-wrapper');
+         document.querySelector('.materials__wrapper').classList.remove('materials__wrapper');
+         document.querySelector('.materials__container').classList.add('swiper-container');
+         document.querySelectorAll('.materials__card').forEach(card => {
+           card.classList.add('swiper-slide')
+         });
+         return enableSwiper();
+       }
+     };
+    
+     const enableSwiper = function () {
     mySwiper = new Swiper('.materials__container', {
       grabCursor: true,
       loop: true,
@@ -402,10 +403,80 @@ document.addEventListener('DOMContentLoaded', function () {
 
   breakpoint.addListener(breakpointChecker);
   breakpointChecker();
-});
+  }
 
-document.querySelectorAll('.house').forEach(element => {
-  element.addEventListener('mouseenter', () => {
-    debugger
-  })
+  //plan
+  
+  if (document.querySelector('.plan')) {
+        document.querySelectorAll('[data-free="продан"], [data-free="зарезервирован"]').forEach(element => {
+          element.removeAttribute("xlink:href");
+          element.style.cursor = "not-allowed"
+        });
+
+      const instances = tippy(document.querySelectorAll('.house'), {
+        content: (instances) => `
+      <div class="tip">
+        <span class="tip__number"> Дом номер ${instances.getAttribute('data-number')}</span>
+        <span class="tip__secion"> Секция ${instances.getAttribute('data-section')}</span>
+        <p class="tip__square" style=" text-align:center">Площадь ${instances.getAttribute('data-sqaure')} кв.м.</p>
+        <p class="tip__avaliable" style="text-align:center">${instances.getAttribute('data-free')}</p>
+      </div>  
+        `,
+        allowHTML: true,
+        animation: 'scale'
+      });
+  }
+
+  //before-after slider
+
+  if (document.querySelector('.duplexes')) {
+    if (document.querySelector('.compare-block')) {
+     const floor1 = new BeerSlider(document.querySelector(".beer-slider"), {
+       start: 50
+     });
+  }
+
+    if (document.querySelector('.compare-block')) {
+      new Tab('.compare-block__tabs_first');
+    }
+    if (document.querySelector('.compare-block')) {
+      new Tab('.compare-block__tabs_sec');
+      }
+      if (document.querySelector('.outer-tabs')) {
+      new OuterTab('.outer-tabs');
+    }
+  }
+
+  
+   if (document.querySelector('.contacts')) {
+     new Tab('.howtoget__tabs');
+   }
+
+    if (document.querySelector('.page-inner')) {
+
+      tippy('.houseprops__question', {
+        placement: 'bottom-start',
+      });
+
+      if (document.querySelector('.compare-block')) {
+          new Tab('.compare-block__tabs_first');
+        }
+
+      
+      const instances = tippy(document.querySelectorAll('.houseprops__svg'), {
+        content: (instances) => `
+          <div class="tip">
+            <span class="tip__number"> Дом номер ${instances.getAttribute('data-number')}</span>
+            <span class="tip__secion"> Секция ${instances.getAttribute('data-section')}</span>
+            <p class="tip__square" style=" text-align:center">Площадь ${instances.getAttribute('data-sqaure')} кв.м.</p>
+            <p class="tip__avaliable" style="text-align:center">${instances.getAttribute('data-free')}</p>
+          </div>  
+        `,
+        allowHTML: true,
+        animation: 'scale',
+        followCursor: true,
+      });
+
+    }
+
 });

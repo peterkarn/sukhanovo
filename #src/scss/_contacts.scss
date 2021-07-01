@@ -1,0 +1,39 @@
+.inner-contacts {
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: auto 410px;
+  gap: 30px;
+  @include adaptiv-value('column-gap', 160, 0, 1);
+
+  @media screen and (max-width: $medium) {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto 410px;
+  }
+
+  @media screen and (max-width: $medium) {
+    grid-template-rows: auto auto 320px;
+  }
+
+
+  &__actions-list {
+    gap: 17px;
+  }
+
+  &__howtoget {
+    max-width: 812px;
+
+    @media screen and (max-width: $medium) {
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__map {
+    @media screen and (min-width: $medium + 1) {
+      grid-column: span 2;
+    }
+
+    img,
+    iframe {
+      max-height: 100%;
+    }
+  }
+}
