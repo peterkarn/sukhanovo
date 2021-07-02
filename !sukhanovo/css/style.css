@@ -4366,6 +4366,10 @@ button.swiper-pagination-bullet {
     display: none;
   }
 
+  .houseprops {
+    grid-template-columns: auto;
+  }
+
   .footer {
     padding: 70px 0;
   }

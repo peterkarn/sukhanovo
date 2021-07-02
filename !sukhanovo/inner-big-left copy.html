@@ -6,11 +6,15 @@
   <title>Усадьба Суханово</title>
   <meta name="description" content="Усадьба Суханово">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" href="fonts/NeueMachina-Bold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/NeueMachina-Regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/NeueMachina-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/NeueMachina-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
-  <div class="site-container">
+  <div class="site-container white-section">
     <header class="header">
   <div class="container header__container">
     <a href="" class="header__logo">
@@ -46,6 +50,124 @@
     </div>
   </div>
 </header>
+    <div class="main page page-inner page-inner_duplex-left">
+      <div class="breadcrumbs container">
+        <ul class="breadcrumbs__list">
+          <li>
+            <a href="">
+              Главная
+            </a>
+            <span> - </span>
+          </li>
+          <li>
+            <a href="">
+              Карта
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="container">
+        <a class="page-inner__back" href="#"><svg width="31" height="16" viewBox="0 0 31 16" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0.293234 7.29289C-0.09729 7.68342 -0.09729 8.31658 0.293234 8.70711L6.6572 15.0711C7.04772 15.4616 7.68089 15.4616 8.07141 15.0711C8.46193 14.6805 8.46193 14.0474 8.07141 13.6569L2.41455 8L8.07141 2.34315C8.46193 1.95262 8.46193 1.31946 8.07141 0.928932C7.68089 0.538408 7.04772 0.538408 6.6572 0.928932L0.293234 7.29289ZM30.0176 7L1.00034 7V9L30.0176 9V7Z"
+              fill="#A8A8A8" />
+          </svg><span>Вернуться к генплану</span></a>
+        <h1 class="page-title page-inner__title centered">
+          Просмотр дома
+        </h1>
+      </div>
+      <section class="houseprops container">
+        <div class="houseprops__house">
+          <div class="houseprops__img">
+            <picture>
+              <source srcset="img/inner/1.webp, img/inner/1@2x.webp 2x" media="(max-width: 1400px)" type="image/webp">
+              <source srcset="img/inner/1.jpg, img/inner/1@2x.jpg" media="(max-width: 1400px)" type="image/jpeg">
+              <source srcset="img/inner/1@2x.webp" media="(min-width: 1401px)" type="image/webp">
+              <source srcset="img/inner/1@2x.jpg" media="(min-width: 1401px)" type="image/jpeg">
+              <img src="inner/1.webp" alt="" style="width:100%;">
+            </picture>
+            <svg data-sqaure="145" data-section="1" data-number="2" data-free="свободен" data-section="1"
+              class="houseprops__svg houseprops__svg_left" xmlns:xlink="http://www.w3.org/1999/xlink" width="190"
+              height="282" viewBox="0 0 190 282" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <a href="#">
+                <path
+                  d="M5.5 9.5V5L1 2H0V204V282H125.5H161V279H187.5V269H189V261.5H187.5V256H189V248H187.5V243H189V235H187.5V229.5H189V222.5H188V216.5H189V209H188V203.5H189V196H188V193H189.5V187H188V180.739H189V173H187.5V168H189V160H187.5V154.5H189V147H187.5V141.5H189V134H187.5V128H189V121H187.5V115H189V108H187.5V102H189V94.5H187.5V89H189V81.5H187.5V58H180.5L155.5 0H139L137.5 9L5.5 9.5Z">
+              </a>
+            </svg>
+            <svg data-sqaure="145" class="houseprops__svg houseprops__svg_right"
+              xmlns:xlink="http://www.w3.org/1999/xlink" width="190" height="282" viewBox="0 0 190 282" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <a href="#">
+                <path
+                  d="M188 1V281H50V278H1V268H0V260H1V255H0V247H1V242H0V234H1V228.5H0V221H1V216H0V208H1V203H0V195H1V192H0V186H1V180H0V172.5H1V167H0V159H1.5V154H0V146.5H1V141H0V133H1V128H0V120.5H1V115H0V107H1.5V101.5H0V94H1.5V89H0V81.5H1V57.5H8.5L34 0H50.5L52 9L182.5 8.5V4.5L183 4L187 1H188Z">
+              </a>
+            </svg>
+          </div>
+          <div class="houseprops__footnote">
+            <p>Общий метраж дуплекса: 158 м2</p>
+            <button class="houseprops__question" aria-label="справка"
+              data-tippy-content="Продается без отделки в свободной планировке. Дополнительно можем предложить услуги ремонта и отделки под ключ.">
+            </button>
+          </div>
+          <button class="houseprops__button btn btn_primary">
+            Оставить заявку
+          </button>
+        </div>
+
+        <div class="houseprops__slider">
+          <div class="compare-block">
+            <div class="tabs compare-block__tabs compare-block__tabs_first">
+              <ul class="tabs__list">
+                <li class="tabs__item"><button class="tabs__btn compare-block__btn tabs__btn_active"
+                    data-tabs-path="1">1 этаж</button>
+                </li>
+                <li class="tabs__item"><button class="tabs__btn compare-block__btn" data-tabs-path="2">2
+                    этаж</button>
+                </li>
+                <li class="tabs__item"><button class="tabs__btn compare-block__btn" data-tabs-path="3">3
+                    этаж</button>
+                </li>
+              </ul>
+              <div class="tabs__content tabs__content_active" data-tabs-target="1">
+                <div class="content">
+                  <!-- 1floor -->
+                  <div class="floor1 beer-slider">
+                    <img src="img/before-after/big-left-1-g.jpg" alt="Дуплекс №1 1-этаж" data-visible="true">
+                    <div class="beer-reveal" data-beer-label="after" data-visible="true">
+                      <img src="img/before-after/big-left-1-c.jpg" alt="Дуплекс №1 1-этаж">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tabs__content" data-tabs-target="2">
+                <div class="content">
+                  <!-- 2floor -->
+                  <div class="floor2 beer-slider">
+                    <img src="img/before-after/big-left-2-g.jpg" alt="Дуплекс №1 2-этаж">
+                    <div class="beer-reveal" data-beer-label="after">
+                      <img src="img/before-after/big-left-2-c.jpg" alt="Дуплекс №1 2-этаж">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tabs__content" data-tabs-target="3">
+                <div class="content">
+                  <!-- 3 floor -->
+                  <div class="floor3 beer-slider">
+                    <img src="img/before-after/big-left-3-g.jpg" alt="Дуплекс №1 3-этаж">
+                    <div class="beer-reveal" data-beer-label="after">
+                      <img src="img/before-after/big-left-3-c.jpg" alt="Дуплекс №1 3-этаж">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
 
     <footer class="footer">
   <div class="container footer__container">

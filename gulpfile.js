@@ -9,7 +9,7 @@ let path = {
 		css: project_folder + "/css/",
 		js: project_folder + "/js/",
     img: project_folder + "/img/",
-    video: project_folder + "/video/",
+    audio: project_folder + "/audio/",
 		fonts: project_folder + "/fonts/",
 	},
 	src: {
@@ -17,7 +17,7 @@ let path = {
 		css: source_folder + "/scss/style.scss",
 		js: source_folder + "/js/*.js",
 		img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
-		video: source_folder + "/video/**/*.mp4",
+		audio: source_folder + "/audio/**/*.mp3",
 		fonts: source_folder + "/fonts/*.ttf",
 	},
 	watch: {
@@ -25,7 +25,7 @@ let path = {
 		css: source_folder + "/scss/**/*.scss",
 		js: source_folder + "/js/**/*.js",
     img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
-    video: source_folder + "/video/**/*.{mp4,webm}",
+    audio: source_folder + "/audio/**/*.mp3",
 	},
 	clean: "./" + project_folder + "/"
 }
@@ -148,11 +148,11 @@ function fonts() {
 		.pipe(dest(path.build.fonts));
 };
 
-// function video() {
-//   src(path.src.video)
-//     .pipe(dest(path.build.video))
-//     .pipe(browsersync.stream())
-// };
+function audio() {
+  src(path.src.audio)
+    .pipe(dest(path.build.audio))
+    .pipe(browsersync.stream())
+};
 
 gulp.task('otf2ttf', function () {
 	return src([source_folder + '/fonts/*.otf'])
@@ -204,7 +204,7 @@ function watchFiles(params) {
 	gulp.watch([path.watch.css], css);
 	gulp.watch([path.watch.js], js);
   gulp.watch([path.watch.img], images);
-  // gulp.watch([path.watch.video], video);
+  gulp.watch([path.watch.audio], audio);
 }
 
 function clean(params) {
@@ -260,7 +260,7 @@ let watch = gulp.parallel(build, watchFiles, browserSync);
 exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
 exports.images = images;
-// exports.video = video;
+exports.audio = audio;
 exports.js = js;
 exports.css = css;
 exports.html = html;

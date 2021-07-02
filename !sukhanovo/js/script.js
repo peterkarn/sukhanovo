@@ -86,10 +86,22 @@ document.addEventListener('DOMContentLoaded', function () {
   //audio
 
   const audioBtn = document.querySelector('.audio-btn');
+  const myAudio = document.querySelector('#audio');
 
   if (audioBtn) {
     audioBtn.addEventListener('click', (e) => {
       e.target.classList.toggle('playing');
+      if (!myAudio.classList.contains('playing')) {
+        myAudio.play();
+        myAudio.classList.add('playing')
+      } else {
+          myAudio.classList.remove('playing')
+          myAudio.pause();
+      }
+    });
+
+    audio.addEventListener('ended', (event) => {
+     audioBtn.classList.remove('playing')
     });
   }
   
@@ -100,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var myYbox = new yBox();
     myYbox.init();
   };
+
 
   //accordion
 
@@ -170,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function () {
     new Tab('.credit__tabs');
   }
 
-  // SPOLLERS
+  // spollers
   const spollersArray = document.querySelectorAll('[data-spollers]');
   if (spollersArray.length > 0) {
     // Получение обычных слойлеров
@@ -425,58 +438,74 @@ document.addEventListener('DOMContentLoaded', function () {
         allowHTML: true,
         animation: 'scale'
       });
+    
+    new OuterTab('.outer-tabs');
+    if (document.querySelector('.compare-block')) {
+      new Tab('.compare-block__tabs_first');
+    }
+    if (document.querySelector('.compare-block')) {
+      new Tab('.compare-block__tabs_sec');
+    }
+    new BeerSlider(document.querySelector(".beer-slider"), {
+      start: 50
+    });
   }
 
   //before-after slider
 
   if (document.querySelector('.duplexes')) {
     if (document.querySelector('.compare-block')) {
-     const floor1 = new BeerSlider(document.querySelector(".beer-slider"), {
+     new BeerSlider(document.querySelector(".beer-slider"), {
        start: 50
      });
-  }
+    }
 
     if (document.querySelector('.compare-block')) {
       new Tab('.compare-block__tabs_first');
     }
     if (document.querySelector('.compare-block')) {
       new Tab('.compare-block__tabs_sec');
-      }
-      if (document.querySelector('.outer-tabs')) {
+    }
+    if (document.querySelector('.outer-tabs')) {
       new OuterTab('.outer-tabs');
     }
   }
 
-  
-   if (document.querySelector('.contacts')) {
-     new Tab('.howtoget__tabs');
-   }
-
-    if (document.querySelector('.page-inner')) {
-
-      tippy('.houseprops__question', {
-        placement: 'bottom-start',
+  if (document.querySelector('.page-inner')) {
+    if (document.querySelector('.compare-block')) {
+      new BeerSlider(document.querySelector(".beer-slider"), {
+        start: 50
       });
-
-      if (document.querySelector('.compare-block')) {
-          new Tab('.compare-block__tabs_first');
-        }
-
-      
-      const instances = tippy(document.querySelectorAll('.houseprops__svg'), {
-        content: (instances) => `
-          <div class="tip">
-            <span class="tip__number"> Дом номер ${instances.getAttribute('data-number')}</span>
-            <span class="tip__secion"> Секция ${instances.getAttribute('data-section')}</span>
-            <p class="tip__square" style=" text-align:center">Площадь ${instances.getAttribute('data-sqaure')} кв.м.</p>
-            <p class="tip__avaliable" style="text-align:center">${instances.getAttribute('data-free')}</p>
-          </div>  
-        `,
-        allowHTML: true,
-        animation: 'scale',
-        followCursor: true,
-      });
-
     }
+  }
+  
+  if (document.querySelector('.contacts')) {
+    new Tab('.howtoget__tabs');
+  }
+
+  if (document.querySelector('.page-inner')) {
+
+    tippy('.houseprops__question', {
+      placement: 'bottom-start',
+    });
+
+    if (document.querySelector('.compare-block')) {
+        new Tab('.compare-block__tabs_first');
+      }
+
+    const instances = tippy(document.querySelectorAll('.houseprops__svg'), {
+      content: (instances) => `
+        <div class="tip">
+          <span class="tip__number"> Дом номер ${instances.getAttribute('data-number')}</span>
+          <span class="tip__secion"> Секция ${instances.getAttribute('data-section')}</span>
+          <p class="tip__square" style=" text-align:center">Площадь ${instances.getAttribute('data-sqaure')} кв.м.</p>
+          <p class="tip__avaliable" style="text-align:center">${instances.getAttribute('data-free')}</p>
+        </div>  
+      `,
+      allowHTML: true,
+      animation: 'scale',
+      followCursor: true,
+    });
+  }
 
 });
