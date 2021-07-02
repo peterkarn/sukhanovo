@@ -25,7 +25,7 @@
 
     &:hover,
     &:focus {
-      box-shadow: 0px 0px 15px #FFBA5F;
+      box-shadow: 0px 0px 15px $gold;
     }
 
     &:active {
@@ -660,5 +660,76 @@
         margin-right: 0.3em;
       }
     }
+  }
+}
+
+// action buttons
+
+.buttons {
+  position: fixed;
+  right: 60px;
+  bottom: 60px;
+
+  &__image {
+    display: block;
+    border-radius: 50%;
+    transition: box-shadow 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0px 0px 8px rgba($white, 0.4);
+    }
+  }
+
+
+
+  &__wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    padding-bottom: 70px;
+    padding-right: 10px;
+    min-width: 200px;
+
+    li {
+      transition: all 0.2s;
+      opacity: 0;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+
+      span {
+        margin-right: 10px;
+        padding: 6px;
+        font-size: 12px;
+        background-color: $grey;
+        border-radius: 5px;
+        line-height: 1;
+        transform: scaleX(0);
+        opacity: 0;
+        transition: all 0.2s;
+        transform-origin: center right;
+      }
+
+      &:hover {
+        span {
+          opacity: 1;
+          transform: scaleX(1);
+        }
+      }
+
+      &.visible {
+        opacity: 1;
+      }
+    }
+
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 }

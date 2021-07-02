@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (e.target.classList.contains('_active')) {
         disableBodyScroll(document.body);
+        menuOpen();
       } else {
         enableBodyScroll(document.body);
       }
@@ -30,28 +31,34 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', () => {
     let scrollDistance = window.scrollY;
     
-    
     if (scrollDistance > lastScrollTop) {
-      header.classList.remove('scrollable');
-      header.style.opacity = "";
-      header.style.transform = 'translateY(-10px)';
-    }  else {
-      header.style.transform = 'translateY(0)';
+      header.classList.remove('translated');
+
+      setTimeout(() => {
+        header.classList.remove('scrollable');
+        header.classList.remove('fixed');
+      }, 400);
+
+      
+    } else {
+      header.classList.add('fixed');
       header.classList.add('scrollable');
+      header.classList.add('translated');
     }
 
     lastScrollTop = scrollDistance;
 
     if (lastScrollTop < 100) {
       header.classList.remove('scrollable');
-       header.style.opacity = "";
-       header.style.transform = 'translateY(0)';
+      header.classList.remove('fixed');
+      header.classList.remove('translated');
+     
+      //  header.style.opacity = "";
+      //  header.style.transform = 'translateY(0)';
     }
   })
 
   
-  
-
   //webP support
 
   function testWebP(callback) {
@@ -507,5 +514,110 @@ document.addEventListener('DOMContentLoaded', function () {
       followCursor: true,
     });
   }
+
+
+  //animations
+
+  let tl = gsap.timeline({
+
+  });
+
+  tl
+    .staggerFromTo('.menu__list li', 0.3, {
+      opacity: 0,
+      y: 20
+    }, {
+      opacity: 1,
+      y: 0,
+    }, 0.03)
+    .from('.offer__title', {
+      opacity: 0,
+      y: 30
+    }, "-=0.3")
+    .from('.offer__subtitle', {
+      opacity: 0,
+      y: 20
+    }, "-=0.3")
+    .from('.offer__btn', {
+      opacity: 0,
+      y: 20
+    }, "-=0.3")
+    .from('.offer__bottom', {
+      opacity: 0,
+      y: 20
+    }, "-=0.3")
+    ;
+  
+  
+
+  //mobile menu animation
+  function menuOpen() {
+      let tlm = gsap.timeline({
+
+      });
+    
+      tlm.staggerFromTo('.menu__body._active li, .menu__body._active .phones__link', 0.7, {
+        opacity: 0,
+        y: 30
+      }, {
+        opacity: 1,
+        y: 0,
+      }, 0.03)
+    }
+    
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from('.icon-dream', {
+    scrollTrigger: {
+      trigger: '.icon-dream',
+      start: '20px 80%',
+    },
+    y: 30,
+    opacity: 0
+  });
+
+  gsap.from('.map__wrapper', {
+    scrollTrigger: {
+      trigger: '.map__wrapper',
+      end: 'center 20%',
+      start: '10%, 70%',
+      scrub: true,
+    },
+    x: -50,
+    opacity: 0.3,
+  });
+
+  gsap.from('.gifts__container img', {
+    scrollTrigger: {
+      trigger: '.gifts__container img',
+      end: 'center 70%',
+      start: '20px, 80%',
+    },
+    x: -40,
+    scale: 0.95,
+    opacity: 0,
+  });
+
+  gsap.from('.credit__media img', {
+    scrollTrigger: {
+      trigger: '.credit__media img',
+      end: 'center 70%',
+      start: '20px, 80%'
+    },
+    x: 40,
+    scale: 0.95,
+    opacity: 0,
+  });
+
+  //social-buttons-at-the-bottom
+
+  const socBtns = document.querySelector('.buttons__image');
+
+  socBtns.addEventListener('click', () => {
+    document.querySelectorAll('.buttons__wrapper li').forEach(element => {
+      element.classList.toggle('visible')
+    });
+  })
 
 });

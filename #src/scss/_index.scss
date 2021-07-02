@@ -416,6 +416,7 @@
   &__inner {
     display: flex;
     align-items: flex-start;
+    overflow: visible;
 
     @media screen and (max-width: $medium) {
       flex-direction: column;
@@ -424,8 +425,8 @@
 
   &__wrapper {
     position: relative;
-    overflow-x: hidden;
-    overflow-y: visible;
+    // overflow-x: hidden;
+    // overflow-y: visible;
     z-index: -1;
     width: 80%;
     margin-right: -25%;

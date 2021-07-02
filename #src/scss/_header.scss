@@ -6,7 +6,7 @@
   width: 100%;
   background-color: transparent;
   color: #fff;
-  transition: all 0.5s;
+  transition: transform 0.5s;
 
   @media screen and (max-width: $medium) {
     padding: 15px 0;
@@ -41,8 +41,7 @@
   }
 
   &.scrollable {
-    position: fixed;
-    background: rgba(30, 31, 34, .9);
+    background: linear-gradient(180deg, #333333 0%, rgba(51, 51, 51, 0.92) 60.21%, rgba(51, 51, 51, 0.88) 83.12%, rgba(51, 51, 51, 0.86) 100%);
     backdrop-filter: blur(10px);
 
     .menu__logo img {
@@ -52,6 +51,21 @@
       }
 
     }
+
+    .header__menu {
+      border: none;
+    }
+  }
+
+  &.fixed {
+    position: fixed;
+    top: -76px;
+  }
+
+  &.translated {
+    transition: transform 0.3s;
+    transition-delay: 0.7s;
+    transform: translateY(76px);
   }
 }
 

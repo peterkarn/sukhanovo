@@ -43,7 +43,7 @@
             <p class="offer__subtitle">
               Место, где объединены удобства городской инфраструктуры и чарующая красота природы
             </p>
-            <a class="btn btn_primary" href="#">
+            <a class="btn btn_primary offer__btn" href="#">
               Выбрать дом
             </a>
           </div>
@@ -649,7 +649,7 @@
             Рассрочка и ипотека
           </h2>
           <div class="tabs credit__tabs">
-            <ul class="tabs__list">
+            <ul class="tabs__list bold">
               <li class="tabs__item"><button class="tabs__btn tabs__btn_active" data-tabs-path="credit">Рассрочка
                 </button></li>
               <li class="tabs__item"><button class="tabs__btn" data-tabs-path="mortgage">Ипотека</button></li>
@@ -784,7 +784,10 @@
       </section>
     </main>
     @@include('_footer.html')
+    @@include('_action-btns.html')
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollTrigger.min.js"></script>
   <script src="js/yBox.js"></script>
   <script src="js/vendors.min.js"></script>
   <script src="js/script.min.js"></script>
