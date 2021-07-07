@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //header
 
-  const
-    header = document.querySelector('.header');
+  const header = document.querySelector('.header');
+  
   let lastScrollTop = 0;
   
   window.addEventListener('scroll', () => {
@@ -80,6 +80,32 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   //Slider
+
+  //modals 
+  const myModal = new HystModal({
+    linkAttributeName: "data-hystmodal",
+  });
+
+  //forms
+
+  flatpickr("#dateTrip", {
+    minDate: "today",
+    enableTime: true,
+    minTime: "9:00",
+    maxTime: "22:00",
+    disableMobile: "true",
+  });
+
+  document.addEventListener('wpcf7mailsent', (event) => {
+    event.target.parentNode.parentNode.parentNode.innerHTML = `
+    <h2 class="modal__title">Ваша заявка отправлена</h2>
+    <p class="modal__text modal__text--wide">
+      Спасибо за обращение, мы свяжемся с вами в течение 10 минут
+    </p>
+    <button class="modal__button" type="button">Отлично</button>
+  `;
+  })
+
 
   const featureSlider = new Swiper('.feature__slider', {
     loop: true,
@@ -443,7 +469,8 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>  
         `,
         allowHTML: true,
-        animation: 'scale'
+        animation: 'scale',
+        appendTo: () => document.querySelector(".plan")
       });
     
     new OuterTab('.outer-tabs');
@@ -494,6 +521,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     tippy('.houseprops__question', {
       placement: 'bottom-start',
+      appendTo: () => document.querySelector('.houseprops')
     });
 
     if (document.querySelector('.compare-block')) {
@@ -512,6 +540,7 @@ document.addEventListener('DOMContentLoaded', function () {
       allowHTML: true,
       animation: 'scale',
       followCursor: true,
+      appendTo: () => document.querySelector('.houseprops__house')
     });
   }
 
@@ -580,7 +609,7 @@ document.addEventListener('DOMContentLoaded', function () {
   gsap.from('.map__wrapper', {
     scrollTrigger: {
       trigger: '.map__wrapper',
-      end: 'center 20%',
+      end: 'center 50%',
       start: '10%, 70%',
       scrub: true,
     },

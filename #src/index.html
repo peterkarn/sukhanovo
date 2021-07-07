@@ -6,6 +6,12 @@
   <title>Усадьба Суханово</title>
   <meta name="description" content="Усадьба Суханово">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+  <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#333">
   <link rel="preload" href="fonts/NeueMachina-Bold.woff" as="font" type="font/woff" crossorigin>
   <link rel="preload" href="fonts/NeueMachina-Regular.woff" as="font" type="font/woff" crossorigin>
   <link rel="preload" href="fonts/NeueMachina-Bold.woff2" as="font" type="font/woff2" crossorigin>
@@ -92,16 +98,16 @@
               <div class="swiper-container feature__slider">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide feature__media-item with-popup _ibg">
-                    <a class="yBox" href="img/features/derevopark-repino-park-2-1.jpg" data-ybox-group="group1"></a>
-                    <img src="img/features/derevopark-repino-park-2-1.jpg" alt="">
+                    <a class="yBox" href="img/features/1@2x.jpg" data-ybox-group="group1"></a>
+                    <img src="img/features/1.jpg" alt="Фотография природы">
                   </div>
                   <div class="swiper-slide feature__media-item with-popup _ibg">
-                    <a class="yBox" href="img/features/derevopark-repino-park-2-1.jpg" data-ybox-group="group1"></a>
-                    <img src="img/features/derevopark-repino-park-2-1.jpg" alt="">
+                    <a class="yBox" href="img/features/2@2x.jpg" data-ybox-group="group1"></a>
+                    <img src="img/features/2.jpg" alt="Фотография природы">
                   </div>
                   <div class="swiper-slide feature__media-item with-popup _ibg">
-                    <a class="yBox" href="img/features/derevopark-repino-park-2-1.jpg" data-ybox-group="group1"></a>
-                    <img src="img/features/derevopark-repino-park-2-1.jpg" alt="">
+                    <a class="yBox" href="img/features/3@2x.jpg" data-ybox-group="group1"></a>
+                    <img src="img/features/3.jpg" alt="Фотография природы">
                   </div>
                 </div>
               </div>
@@ -110,8 +116,8 @@
           <article class="feature features__item features__item_second">
             <div class="feature__media deco-left">
               <a class="feature__media-video yBox yBox_iframe feature__media-item feature__media-item_with-btn _ibg"
-                href="https://www.youtube.com/watch?v=a9bIxgW7saQ">
-                <img src="img/features/park2.jpg" alt="park">
+                href="https://youtu.be/ovV2mahq4bk">
+                <img src="img/features/park2.jpg" alt="Превью видео">
                 <div class="video-btn"></div>
               </a>
             </div>
@@ -131,7 +137,8 @@
                 </p>
               </div>
               <div class="feature__bottom">
-                <button data-da="features__item_second,2,572" class="btn btn_primary feature__btn-shift">
+                <button data-da="features__item_second,2,572" data-hystmodal="#exhibit"
+                  class="btn btn_primary feature__btn-shift">
                   Записаться на экскурсию
                 </button>
               </div>
@@ -153,7 +160,7 @@
             </div>
             <div class="feature__media deco-right">
               <div class="feature__media-item _ibg">
-                <img src="img/features/park3.jpg" alt="park">
+                <img src="img/features/park3.jpg" alt="Фото парка">
               </div>
             </div>
           </article>
@@ -784,6 +791,7 @@
       </section>
     </main>
     @@include('_footer.html')
+    @@include('_modals.html')
     @@include('_action-btns.html')
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>

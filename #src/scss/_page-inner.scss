@@ -51,12 +51,17 @@
 }
 
 .houseprops {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 
   @media screen and (max-width: $small) {
     grid-template-columns: auto;
+  }
+
+  &__house {
+    position: relative;
   }
 
 

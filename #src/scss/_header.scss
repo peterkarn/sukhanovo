@@ -67,6 +67,16 @@
     transition-delay: 0.7s;
     transform: translateY(76px);
   }
+
+  &.white {
+    .menu__link {
+      color: $dark;
+
+      @media screen and (max-width: $medium) {
+        color: $white;
+      }
+    }
+  }
 }
 
 .menu {

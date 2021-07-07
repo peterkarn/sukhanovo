@@ -36,7 +36,6 @@ function OuterTab(tabSelector) {
   tabContainer.addEventListener('click', function (e) {
     if (e.target.classList.contains('outer-tabs__btn')) {
       const tabsPath = e.target.dataset.tabsPath;
-      console.log(this);
       
       tabsBtn.forEach(el => {
         el.classList.remove('outer-tabs__btn_active')

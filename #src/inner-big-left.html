@@ -6,6 +6,12 @@
   <title>Усадьба Суханово</title>
   <meta name="description" content="Усадьба Суханово">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+  <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#333">
   <link rel="preload" href="fonts/NeueMachina-Bold.woff" as="font" type="font/woff" crossorigin>
   <link rel="preload" href="fonts/NeueMachina-Regular.woff" as="font" type="font/woff" crossorigin>
   <link rel="preload" href="fonts/NeueMachina-Bold.woff2" as="font" type="font/woff2" crossorigin>
@@ -76,7 +82,7 @@
               data-tippy-content="Продается без отделки в свободной планировке. Дополнительно можем предложить услуги ремонта и отделки под ключ.">
             </button>
           </div>
-          <button class="houseprops__button btn btn_primary">
+          <button data-hystmodal="#call" class="houseprops__button btn btn_primary">
             Оставить заявку
           </button>
         </div>
@@ -136,6 +142,7 @@
     </div>
 
     @@include('_footer.html')
+    @@include('_modals.html')
     @@include('_action-btns.html')
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>

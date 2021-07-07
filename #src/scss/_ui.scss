@@ -1,3 +1,5 @@
+@import "forms";
+
 // buttons
 
 .btn {
@@ -532,7 +534,12 @@
     margin: 8px 0 6px;
   }
 
-  &__avaliable {}
+  &__avaliable {
+    font-weight: 700;
+    font-size: 12px;
+    color: $gold;
+    text-transform: uppercase;
+  }
 }
 
 //compare block
@@ -667,21 +674,29 @@
 
 .buttons {
   position: fixed;
+  z-index: 100;
   right: 60px;
   bottom: 60px;
+
+  @media screen and (max-width: $xsmall) {
+    right: 30px;
+    bottom: 30px;
+  }
 
   &__image {
     display: block;
     border-radius: 50%;
-    transition: box-shadow 0.2s;
+    transition: filter 0.2s;
     cursor: pointer;
 
+    @media screen and (max-width: $xsmall) {
+      max-width: 50px;
+    }
+
     &:hover {
-      box-shadow: 0px 0px 8px rgba($white, 0.4);
+      filter: drop-shadow(0px 0px 8px rgba($gold, 0.4));
     }
   }
-
-
 
   &__wrapper {
     position: absolute;
@@ -690,7 +705,6 @@
     z-index: -1;
     padding-bottom: 70px;
     padding-right: 10px;
-    min-width: 200px;
 
     li {
       transition: all 0.2s;
@@ -704,7 +718,8 @@
         margin-right: 10px;
         padding: 6px;
         font-size: 12px;
-        background-color: $grey;
+        background-color: $dark;
+        color: $gold;
         border-radius: 5px;
         line-height: 1;
         transform: scaleX(0);
@@ -731,5 +746,6 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    min-width: 200px;
   }
 }
